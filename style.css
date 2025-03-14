@@ -695,7 +695,7 @@ input:checked + .slider:before {
   background-color: var(--maingrey);
   padding: 10px;
   color: var(--mainblack);
-  
+
 }
 
 /* The "show" class is added to the filtered elements */
@@ -806,7 +806,7 @@ div.elem-group {
       border-bottom:5px solid rgb(0, 0, 0, 0);
         position: relative;
         border-radius: 10px;
-      
+
     }
 
     button.booking:hover {
