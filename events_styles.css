@@ -1,6 +1,4 @@
-* {
-    box-sizing: border-box;
-}
+
 
 .events-grid {
     max-width: 80%;
@@ -41,6 +39,7 @@
     justify-content: center;
     width: 60%;
     min-width: 0; /* Allow shrinking in flexbox */
+    box-sizing: border-box;
 }
 
 .event-title {
@@ -48,11 +47,13 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: #333;
+    box-sizing: border-box;
 }
 
 .event-description {
     font-size: 1rem;
     color: #555;
+    box-sizing: border-box;
 }
 
 @media (max-width: 3000px) {
