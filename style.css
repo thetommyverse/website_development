@@ -228,6 +228,15 @@ a:hover {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .button_labels {
+    display: none;
+  }
+}
+
+
+
+
 /* Style the tab wrapper */
 .tabWrapper {
   /* Center the buttons inside the tab */
