@@ -1,8 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
 .events-grid {
     max-width: 80%;
     margin: 0 auto;
+    padding: 0 1rem; /* Prevent overflow on small screens */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Changed from 500px */
     gap: 2rem;
     margin-bottom: 50px;
     margin-top: 50px;
@@ -16,6 +21,7 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
+
 }
 
 .event-card:hover {
@@ -34,6 +40,7 @@
     flex-direction: column;
     justify-content: center;
     width: 60%;
+    min-width: 0; /* Allow shrinking in flexbox */
 }
 
 .event-title {
@@ -48,9 +55,10 @@
     color: #555;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 3000px) {
     .event-card {
         flex-direction: column;
+
     }
 
     .event-image {
