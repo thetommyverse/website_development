@@ -1,0 +1,80 @@
+
+/* 🔹 Gallery Container */
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;  /* Limit the width to 800px */
+    margin: 0 auto;  /* Ensure the gallery is centered horizontally */
+    margin-left: -20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* 🔹 Main Image */
+.gallery-container .main-image {
+    background: var(--mainwhite);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+.gallery-container .main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🔹 Thumbnail Container */
+.gallery-container .thumbnail-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+    max-width: 600px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* 🔹 Thumbnail Styling */
+.gallery-container .thumbnail {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+.gallery-container .thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-container .thumbnail.active {
+    border: 3px solid var(--mainpurple);
+    transform: scale(1.05);
+}
+
+/* 📱 Mobile Styles */
+@media (max-width: 600px) {
+    .gallery-container .thumbnail-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    .gallery-container .thumbnail-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

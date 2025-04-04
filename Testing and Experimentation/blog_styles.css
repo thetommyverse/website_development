@@ -1,0 +1,709 @@
+/* Import fonts */
+@import url("https://fonts.cdnfonts.com/css/tw-cen-mt-std");
+
+/* ================================ */
+/*        Global Variables          */
+/* ================================ */
+:root {
+    --text_font: "Roboto", sans-serif;
+
+    /* Color Theme */
+    --mainpurple: #6008ac;
+    --lightpurple: #b084cc;
+    --yellowalt: #edbd2d;
+    --lightyellow: #f8e09a;
+    --mainwhite: #f4f4f9;
+    --mainblack: #000000;
+    --maingrey: #ccc;
+
+    /* Styling colours */
+    --default-color: #2d2d2d;
+    --grey: #9e9e9e;
+    --red: #eb5757;
+    --orange: #f2994a;
+    --yellow: #f2c94c;
+    --green: #27ae60;
+    --teal: #2ac9b7;
+    --blue: #2d9cdb;
+    --purple: #9b51e0;
+    --pink: #ff4d94;
+    --brown: #8d6e63;
+    --cyan: #00bcd4;
+    --light-grey: #f5f5f5;
+}
+
+/* ================================ */
+/*          Global Styles           */
+/* ================================ */
+body {
+    background-color: var(--mainwhite);
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.43; /* Improved readability */
+    color: var(--mainblack);
+}
+
+/* ================================ */
+/*          Headings Styles         */
+/* ================================ */
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    color: #222;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease-in-out;
+}
+
+/* Underline effect for h1 */
+h1::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: var(--lightpurple);
+    margin: 12px auto 0;
+    border-radius: 2px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Hover effect on heading */
+h1:hover::after {
+    width: 120px;
+}
+
+/* Underline effect for h2 */
+h2::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: var(--purple);
+    margin: 12px auto 0;
+    border-radius: 2px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Hover effect on heading */
+h2:hover::after {
+    width: 120px;
+}
+
+/* Styling for post date */
+.date {
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+    color: #666;
+    margin-top: -5px;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    opacity: 0.85;
+    transition: opacity 0.3s ease-in-out;
+}
+
+h3:hover {
+    opacity: 1;
+}
+
+/* ================================ */
+/*       Page Content Styles        */
+/* ================================ */
+.page_text_container {
+    position: relative;
+    text-align: center;
+    padding: 0;
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.page_content {
+    width: 75%;
+    margin: 5px;
+}
+
+/* Centering images */
+.outer-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+figcaption {
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+    margin-top: 5px;
+    outline: 1px solid var(--maingrey);
+    padding: 5px;
+}
+
+/* ================================ */
+/*           Footer Styles          */
+/* ================================ */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-top: 5px solid var(--maingrey);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Footer Button Styling */
+footer button {
+    background-color: var(--lightpurple);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+footer button:hover {
+    background-color: var(--mainpurple);
+    transform: scale(1.05);
+}
+
+/* Footer Button Styling */
+#exit-button {
+    background-color: var(--lightpurple);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 5px;
+}
+
+#exit-button:hover {
+    background-color: var(--mainpurple);
+    transform: scale(1.05);
+}
+
+
+/* Read more Button Styling */
+.read {
+    background-color: var(--maingrey);
+    color: var(--mainblack);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 50px;
+}
+
+.read:hover {
+    background-color: var(--mainpurple);
+    transform: scale(1.05);
+    color: var(--mainwhite);
+}
+
+/* ================================ */
+/*      Hyperlink Hover Effect      */
+/* ================================ */
+
+a:hover {
+    background-color: var(--mainpurple);
+    color: var(--mainwhite);
+    transition: 0.2s;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+/* ================================= */
+/*       Text Alignment Classes      */
+/* ================================= */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* ================================= */
+/*      Standard Color Classes       */
+/* ================================= */
+.text-default { color: var(--default-color); }
+.text-grey { color: var(--grey); }
+.text-red { color: var(--red); }
+.text-orange { color: var(--orange); }
+.text-yellow { color: var(--yellow); }
+.text-green { color: var(--green); }
+.text-teal { color: var(--teal); }
+.text-blue { color: var(--blue); }
+.text-purple { color: var(--purple); }
+.text-pink { color: var(--pink); }
+.text-brown { color: var(--brown); }
+.text-cyan { color: var(--cyan); }
+
+/* ================================= */
+/*     Text Highlighting             */
+/* ================================= */
+.highlight {
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+
+/* Default state: Transparent background with black text */
+.highlight-grey { background-color: rgba(158, 158, 158, 0.1); color: #000; }
+.highlight-red { background-color: rgba(235, 87, 87, 0.1); color: #000; }
+.highlight-orange { background-color: rgba(242, 153, 74, 0.1); color: #000; }
+.highlight-yellow { background-color: rgba(242, 201, 76, 0.1); color: #000; }
+.highlight-green { background-color: rgba(39, 174, 96, 0.3); color: #000; }
+.highlight-teal { background-color: rgba(42, 201, 183, 0.1); color: #000; }
+.highlight-blue { background-color: rgba(45, 156, 219, 0.1); color: #000; }
+.highlight-purple { background-color: rgba(155, 81, 224, 0.1); color: #000; }
+.highlight-pink { background-color: rgba(255, 77, 148, 0.1); color: #000; }
+.highlight-brown { background-color: rgba(141, 110, 99, 0.1); color: #000; }
+.highlight-cyan { background-color: rgba(0, 188, 212, 0.1); color: #000; }
+
+/* Smooth transition effect */
+.highlight-grey,
+.highlight-red,
+.highlight-orange,
+.highlight-yellow,
+.highlight-green,
+.highlight-teal,
+.highlight-blue,
+.highlight-purple,
+.highlight-pink,
+.highlight-brown,
+.highlight-cyan {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover state: Solid color with white or black text for contrast */
+.highlight-grey:hover { background-color: var(--grey); color: #fff; }
+.highlight-red:hover { background-color: var(--red); color: #fff; }
+.highlight-orange:hover { background-color: var(--orange); color: #fff; }
+.highlight-yellow:hover { background-color: var(--yellow); color: #000; }
+.highlight-green:hover { background-color: var(--green); color: #fff; }
+.highlight-teal:hover { background-color: var(--teal); color: #fff; }
+.highlight-blue:hover { background-color: var(--blue); color: #fff; }
+.highlight-purple:hover { background-color: var(--purple); color: #fff; }
+.highlight-pink:hover { background-color: var(--pink); color: #fff; }
+.highlight-brown:hover { background-color: var(--brown); color: #fff; }
+.highlight-cyan:hover { background-color: var(--cyan); color: #fff; }
+
+/* ================================= */
+/*       Full-Width Banner Style     */
+/* ================================= */
+.banner {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.banner-grey { background-color: var(--grey); color: #fff; }
+.banner-red { background-color: var(--red); color: #fff; }
+.banner-orange { background-color: var(--orange); color: #fff; }
+.banner-yellow { background-color: var(--yellow); color: #000; }
+.banner-green { background-color: var(--green); color: #fff; }
+.banner-teal { background-color: var(--teal); color: #fff; }
+.banner-blue { background-color: var(--blue); color: #fff; }
+.banner-purple { background-color: var(--purple); color: #fff; }
+.banner-pink { background-color: var(--pink); color: #fff; }
+.banner-brown { background-color: var(--brown); color: #fff; }
+.banner-cyan { background-color: var(--cyan); color: #fff; }
+
+/* ================================= */
+/*        Quote Block Style          */
+/* ================================= */
+/* Block Quote */
+.quote {
+    border-left: 4px solid var(--grey);
+    padding: 10px 16px;
+    background-color: var(--light-grey);
+    font-style: italic;
+    color: var(--default-color);
+    font-size: 125% !important;
+    font-family: "Georgia", "Garamond", "Times New Roman", serif; /* More quote-like font */
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.quote:hover {
+    background-color: rgba(158, 158, 158, 0.1); /* Slight grey tint */
+    border-left-color: var(--purple); /* Highlight border */
+    transform: translateX(4px); /* Slight shift for a dynamic effect */
+}
+
+/* Inline Quote */
+.quote-inline {
+    border-left: 2px solid var(--grey); /* Thinner border for inline use */
+    padding-left: 8px; /* Small padding to separate from text */
+    font-style: italic;
+    color: var(--default-color);
+    font-size: 80% !important; /* Slightly larger for emphasis but not overpowering */
+    display: inline; /* Ensures it stays within text flow */
+    background-color: var(--light-grey);
+    font-family: "Georgia", "Garamond", "Times New Roman", serif; /* Matching quote style */
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.quote-inline:hover {
+    background-color: rgba(158, 158, 158, 0.3); /* More noticeable highlight */
+    border-left-color: var(--purple); /* Highlight border */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+
+/* ================================= */
+/*   Prism.js Code Block Styling     */
+/* ================================= */
+pre[class*="language-"] {
+    background: #2d2d2d;
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: monospace;
+}
+
+
+/* ================================= */
+/*            Callouts               */
+/* ================================= */
+.callout {
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 5px solid;
+    margin: 10px 0;
+    font-size: 150%;
+    background-color: rgba(45, 45, 45, 0.1);
+    color: var(--default-color);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* Color Variants */
+.callout.grey { border-color: var(--grey); background-color: rgba(158, 158, 158, 0.1); }
+.callout.red { border-color: var(--red); background-color: rgba(235, 87, 87, 0.1); }
+.callout.orange { border-color: var(--orange); background-color: rgba(242, 153, 74, 0.1); }
+.callout.yellow { border-color: var(--yellow); background-color: rgba(242, 201, 76, 0.1); }
+.callout.green { border-color: var(--green); background-color: rgba(39, 174, 96, 0.1); }
+.callout.teal { border-color: var(--teal); background-color: rgba(42, 201, 183, 0.1); }
+.callout.blue { border-color: var(--blue); background-color: rgba(45, 156, 219, 0.1); }
+.callout.purple { border-color: var(--purple); background-color: rgba(155, 81, 224, 0.1); }
+.callout.pink { border-color: var(--pink); background-color: rgba(255, 77, 148, 0.1); }
+.callout.brown { border-color: var(--brown); background-color: rgba(141, 110, 99, 0.1); }
+.callout.cyan { border-color: var(--cyan); background-color: rgba(0, 188, 212, 0.1); }
+
+.callout-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Stock Callouts with Icons and Titles */
+.callout.note {
+    border-color: #1e88e5;
+    background-color: rgba(30, 136, 229, 0.15);
+}
+.callout.note::before {
+    content: "📝 Note";
+    font-weight: bold;
+}
+
+.callout.warning {
+    border-color: #ffa000;
+    background-color: rgba(255, 160, 0, 0.15);
+}
+.callout.warning::before {
+    content: "⚠️ Warning";
+    font-weight: bold;
+}
+
+.callout.error {
+    border-color: #d32f2f;
+    background-color: rgba(211, 47, 47, 0.15);
+}
+.callout.error::before {
+    content: "❌ Error";
+    font-weight: bold;
+}
+
+.callout.success {
+    border-color: #388e3c;
+    background-color: rgba(56, 142, 60, 0.15);
+}
+.callout.success::before {
+    content: "✅ Success";
+    font-weight: bold;
+}
+
+.callout.info {
+    border-color: #0288d1;
+    background-color: rgba(2, 136, 209, 0.15);
+}
+.callout.info::before {
+    content: "ℹ️ Info";
+    font-weight: bold;
+}
+
+/* Two-Column Layout */
+.column-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+/* ================================= */
+/*        Table Styling             */
+/* ================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: var(--light-grey);
+    margin: 16px 0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid var(--grey);
+    text-align: left;
+}
+
+th {
+    background-color: var(--purple);
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #e8e8e8;
+}
+
+/* Modernize the filter bar */
+#tags {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 15px 0;
+}
+
+/* Header styling */
+#tags h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Style the button container */
+#myBtnContainer {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Base button styles */
+.btn {
+    background: #f5f5f5;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover and active state */
+.btn:hover {
+    background-color: var(--mainpurple);
+    color: var(--mainwhite);
+    transform: scale(1.05);
+}
+
+.btn.active {
+    background: var(--lightpurple);
+    color: white;
+}
+
+.btn.active:hover {
+    background-color: var(--mainpurple);
+    color: var(--mainwhite);
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    #myBtnContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+#rounded {
+    border-radius: 12px;
+}
+
+#rounded-image {
+    border-radius: 12px 12px 0px 0px;
+}
+
+/* Ensure the image is responsive */
+figure img {
+    max-width: 75%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
+    margin-bottom: 10px;
+}
+
+/* Style for figure and caption */
+figure {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 90%; /* Prevents images from being too wide */
+}
+
+figcaption {
+    font-size: 14px;
+    font-style: italic;
+    color: #555;
+    margin-top: 5px;
+    max-width: 75%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#link {
+    color: var(--purple);
+    text-decoration: underline;
+}
+
+#link:hover {
+    color: var(--mainwhite);
+}
+
+/* ================================= */
+/*        Prompts from AI            */
+/* ================================= */
+
+@keyframes swirlGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.ai-prompt {
+    /* background: linear-gradient(135deg, #1b0f2a, #2b1e3b, #320267, #341e3b);*/
+    background: linear-gradient(135deg, #f7e1fb, #f1d1f5, #dcc1f6, #f2e9f5);
+    background-size: 300% 300%;
+    animation: swirlGradient 10s infinite linear;
+    color: black;
+    font-family: "Courier New", Courier, monospace;
+    border-left: 5px solid #b238f8; /* Purple left border */
+    border-right: 5px solid #b238f8; /* Purple right border */
+    padding: 16px;
+    border-radius: 8px;
+    /*box-shadow: 0 4px 10px rgba(56, 189, 248, 0.3);*/
+    margin: 24px 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    position: relative; /* Allows precise positioning of the label */
+    padding-top: 30px;
+}
+
+/* Centered Label with Bottom Purple Border */
+.ai-prompt::before {
+    content: "Prompt";
+    position: absolute;
+    top: -12px; /* Moves it slightly above the box */
+    left: 50%;
+    transform: translateX(-50%); /* Centers it */
+    background: black;
+    color: white;
+    padding: 4px 50px; /* Adds left/right padding */
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px 8px 8px 8px;
+    border-bottom: 3px solid #b238f8; /* Purple border on bottom */
+    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);*/
+    white-space: nowrap; /* Ensures it doesn’t wrap */
+}
+
+/* Extra styling for alternate button */
+
+.button-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.footer-button {
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    height: 100%; /* Ensures equal height */
+    box-sizing: border-box;
+    background-color: var(--primary-color, #eee); /* fallback if --primary-color is not set */
+    color: black;
+}
+
+.yellow-button {
+    background-color: var(--lightyellow);
+}
+
+.purple-button {
+    background-color: var(--lightpurple);
+    color:white;
+}
+
+.yellow-button:hover {
+    background-color: var(--yellowalt);
+}
+
+/* Responsive layout: stack buttons vertically on smaller screens */
+@media (max-width: 806px) {
+    .button-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+
+
+

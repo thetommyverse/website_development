@@ -1,0 +1,64 @@
+/* *********************************** */
+/* MAIN IMAGE STYLES */
+/* *********************************** */
+
+/* Container for the image and text */
+.image-text-container {
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    gap: 20px; /* Space between the image and text */
+    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+    margin: 20px auto;
+    width: 90%; /* Makes the container responsive */
+    max-width: 1000px; /* Limits the maximum width of the container */
+    padding: 10px; /* Optional: Adds padding inside the container */
+}
+
+/* Image style */
+.circle-image {
+    background: var(--mainwhite); /* Background color similar to gallery */
+    border-radius: 10%; /* Makes the image circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow around the image */
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    padding: 10px; /* Padding around the image */
+    width: 50vw; /* Responsive width based on viewport */
+    max-width: 350px; /* Optional: Limits the maximum width of the image */
+    height: 50vw; /* Keeps the image in a perfect circle */
+    max-height: 350px; /* Limits the maximum height */
+    margin-bottom: 20px; /* Bottom margin to separate from other content */
+}
+
+/* Image content inside the circle */
+.circle-image img {
+    width: 100%; /* Makes sure the image fills the container */
+    height: 100%; /* Ensures it fills the circular container */
+    object-fit: cover; /* Maintains aspect ratio and fills the circle */
+    border-radius: 10%; /* Keeps the image circular */
+}
+
+/* Text content section */
+.text-content {
+    flex: 1; /* Makes the text take up remaining space */
+    max-width: 600px; /* Limits the width of the text section */
+    padding: 10px; /* Adds padding around the text */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .image-text-container {
+        flex-direction: column; /* Stack the image and text vertically on smaller screens */
+        align-items: center; /* Center the content horizontally */
+    }
+
+    .circle-image {
+        width: 100vw; /* Increase the image size on small screens */
+        height: 100vw; /* Ensure the image stays circular */
+        max-width: 300px; /* Optional: Limits the image size on small screens */
+        max-height: 300px;
+    }
+
+    .text-content {
+        text-align: center; /* Centers text on small screens */
+    }
+}

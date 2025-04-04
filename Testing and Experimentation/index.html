@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to The Tommyverse</title>
+  <meta
+          name="description"
+          content="Tommy Hills is a passionate STEM communicator, based in Milton Keynes, with their blend of Mathematics, Computer Science, and Education seamlessly intertwining with the world of performing and creative arts."
+  />
+
+    <link rel="stylesheet" href="blog_styles.css" type="text/css">
+  <link rel="stylesheet" href="gallery_grid.css " type="text/css">
+  <link rel="stylesheet" href="website_styles.css" type="text/css">
+    <script src="scripts.js"></script>
+
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <script
+          src="https://kit.fontawesome.com/173f107a50.js"
+          crossorigin="anonymous"
+  ></script>
+
+  <style>
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    /* General text container for centering or left-aligning content */
+    .text-container {
+      font-family: Arial, sans-serif;  /* Set font to Arial */;
+      margin: 0 auto;  /* Centers the container */
+      padding: 20px;  /* Add padding around the content */
+      max-width: 900px;  /* Restrict maximum width for better readability */
+    }
+
+    /* Optionally, you can control text alignment: */
+
+    /* To center the text within the container */
+    .text-container.center {
+      text-align: center;
+    }
+
+    /* To left-align the text within the container */
+    .text-container.left {
+      text-align: left;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+      gap: 15px;
+      padding: 15px;
+      width: 90%; /* Responsive width */
+      max-width: 800px; /* Prevents buttons from stretching too wide */
+    }
+
+    nav button,
+    nav a.nav-btn {
+      background-color: var(--lightpurple);
+      border: none;
+      border-radius: 9999px; /* Fully rounded */
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px; /* Space between icon and text */
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      text-decoration: none;
+      white-space: nowrap; /* Prevents text from breaking */
+    }
+
+    nav button i {
+      font-size: 18px; /* Adjust icon size */
+    }
+
+    nav button:hover,
+    nav a.nav-btn:hover {
+      background-color: var(--mainpurple);
+      transform: scale(1.05);
+    }
+
+    nav button.active,
+    nav a.nav-btn.active {
+      background-color: var(--mainpurple);
+    }
+
+    /* 📱 Mobile Styles - Switch to a 2-column grid */
+    @media (max-width: 600px) {
+      nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2-column layout */
+        gap: 10px; /* Reduce spacing for better fit */
+        width: 100%;
+        max-width: 400px; /* Ensure buttons don’t stretch too wide */
+      }
+
+      nav button,
+      nav a.nav-btn {
+        width: 100%; /* Make buttons fill their grid cells */
+        justify-content: center;
+      }
+    }
+
+    /* Correcting the visibility of the content */
+    .content {
+      display: none; /* Hide by default */
+    }
+
+    .content.active {
+      display: block; /* Show when active */
+    }
+
+    .fade {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .content.fade {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <button class="nav-btn active" data-target="home"><i class="fa fa-home"></i> Home</button>
+  <button class="nav-btn" data-target="about"><i class="fa-solid fa-circle-info"></i> About</button>
+  <button class="nav-btn" data-target="events"><i class="fa-solid fa-calendar-days"></i> Events</button>
+  <button class="nav-btn" data-target="gallery"><i class="fa-solid fa-camera-retro"></i> Gallery</button>
+  <button onclick="window.location.href='https://tommysthoughts.thetommyverse.com'"><i class="fa-solid fa-file"></i> Blog</button>
+  <button onclick="window.location.href='https://thetommyverse.notion.site/get-in-touch'"><i class="fa-solid fa-envelope"></i> Contact</button>
+</nav>
+
+<div id="home" class="content active fade show">
+  <h1>Tommy Hills</h1>
+
+  <div class="image-text-container">
+    <!-- Image Section -->
+    <div class="circle-image">
+      <img src="/Images/PROFILE PICTURE T.PARGETER-GREY.jpg" alt="">
+    </div>
+
+    <!-- Text Content Section -->
+    <div class="text-content">
+      <p>
+        This is the text content that goes alongside the image. You can include
+        any text here, and it will adjust according to the screen size. The image
+        will stay on the left on larger screens and stack above the text on smaller screens.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<div id="about" class="content">
+  <h1>About</h1>
+  <div class="text-container">
+  <p>Here's a little info about what we do.</p>
+  </div>
+</div>
+
+<div id="events" class="content fade">
+  <h1>Events</h1>
+  <div class="text-container">
+  <p>Reach out to us at contact@example.com.</p>
+  </div>
+</div>
+
+<div id="gallery" class="content fade">
+  <h1>Gallery</h1>
+  <div class="text-container">
+  <p>Reach out to us at contact@example.com.</p>
+  </div>
+  <div class="gallery-container">
+    <!-- Main Image -->
+    <div class="main-image">
+      <img id="mainImg" src="test-image.jpg" alt="Main Image">
+    </div>
+
+    <!-- Thumbnail Images -->
+    <div class="thumbnail-container">
+      <img class="thumbnail active" src="test-image.jpg" alt="Image 1" onclick="changeImage(this)">
+      <img class="thumbnail" src="test-image-2.jpg" alt="Image 2" onclick="changeImage(this)">
+      <img class="thumbnail" src="test-image.jpg" alt="Image 3" onclick="changeImage(this)">
+      <img class="thumbnail" src="test-image-2.jpg" alt="Image 4" onclick="changeImage(this)">
+      <img class="thumbnail" src="test-image.jpg" alt="Image 5" onclick="changeImage(this)">
+      <img class="thumbnail" src="test-image-2.jpg" alt="Image 6" onclick="changeImage(this)">
+      <img class="thumbnail" src="test-image.jpg" alt="Image 7" onclick="changeImage(this)">
+      <img class="thumbnail" src="test-image-2.jpg" alt="Image 8" onclick="changeImage(this)">
+      <img class="thumbnail" src="test-image.jpg" alt="Image 9" onclick="changeImage(this)">
+    </div>
+  </div>
+</div>
+
+
+<script>
+  // Function to handle page switching with fade effect
+  function switchPage(target) {
+    // Get all sections (content areas)
+    let sections = document.querySelectorAll('.content');
+
+    // Hide all sections and remove the 'active' class
+    sections.forEach(section => {
+      section.classList.remove('active');
+      section.classList.remove('fade');
+    });
+
+    // Get the target section by matching the id (not data-target)
+    let targetSection = document.querySelector(`#${target}`);
+
+    // Show the target section and add the fade class
+    targetSection.classList.add('active');
+    targetSection.classList.add('fade');
+  }
+
+  // Function to handle redirection with a smooth transition
+  function redirectToPage(url) {
+    // Perform a fade-out transition for the current content before redirecting
+    let currentContent = document.querySelector('.fade.show');
+    currentContent.classList.remove('show');
+    currentContent.style.opacity = '0';  // Fade out the content
+
+    // After the fade-out transition, redirect to the target page
+    setTimeout(function () {
+      window.location.href = url;
+    }, 300); // Wait for the fade-out to complete before redirecting
+  }
+
+  // Adding event listeners to navbar buttons
+  document.querySelectorAll('.nav-btn').forEach(button => {
+    button.addEventListener('click', function(event) {
+      // Prevent default behavior for buttons that use data-target
+      event.preventDefault();
+
+      // Check if the button has an 'onclick' handler (for Blog and Contact)
+      if (this.hasAttribute('onclick')) {
+        // If it does, execute the redirection logic
+        const url = this.getAttribute('onclick').replace('window.location.href=', '').replace(/['"]/g, '');
+        redirectToPage(url);
+      } else {
+        // If it's a standard nav button, switch the page with the fade effect
+        const target = this.getAttribute('data-target');
+        switchPage(target);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
