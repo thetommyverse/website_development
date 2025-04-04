@@ -94,24 +94,29 @@ a:hover {
   padding: 5px 0px;
 }
 
-/* Page Text Content styling */
 .page_text_container {
   position: relative;
   text-align: center;
-  padding: 0px;
+  padding-inline: 60px 120px; /* left and right padding */
   margin-top: 25px;
   width: 100%;
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
 }
 
+.page_text_container > * {
+  max-width: 800px; /* or whatever works best for your layout */
+  width: 100%;
+}
 .page_text_div {
   width: 75%;
 }
 
-@media screen and (max-width: 560px) {
-  .page_text_div {
-    width: 90%;
+@media (max-width: 600px) {
+  .page_text_container {
+    padding-inline: 20px; /* equal left and right padding */
+    margin-bottom: 100px; /* leaves space for the fixed button */
   }
 }
 
