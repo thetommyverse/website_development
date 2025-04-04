@@ -62,3 +62,101 @@
         text-align: center; /* Centers text on small screens */
     }
 }
+
+
+
+
+/* ********************************** */
+/* WEBSITE FOOTER STYLES */
+/* ********************************** */
+
+.footer_wrapper {
+    background-color: var(--grey);
+    padding: 40px 20px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+.footer_container {
+    margin: 0 auto;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer_title {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer_buttons {
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer_links {
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--lightpurple);
+}
+
+.footer_links i {
+    font-size: 1.3em;
+}
+
+.footer_links:hover {
+    background-color: var(--mainpurple);
+    transform: scale(1.05);
+}
+
+.footer_links:focus {
+    outline: none;
+}
+
+.tab_labels {
+    font-size: 1em;
+}
+
+
+
+
+
+.main-text-container {
+    width: 80%; /* Adjust width as needed */
+    margin: 0 auto; /* Centers the div horizontally */
+}
+
+.main-text-container p {
+    text-align: left; /* Left-aligns the paragraph text */
+}
+
+.inline_link {
+    font-weight: bold;
+    color: var(--mainpurple);
+}
+
+
+#alt_button {
+    background-color: var(--lightyellow);
+    color: black;
+}
+
+#alt_button:hover {
+    background-color: var(--yellowalt);
+}

@@ -1,723 +1,475 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta
-      name="description"
-      content="Tommy Hills is a passionate STEM communicator, based in Kent, with their blend of Mathematics, Computer Science, and Education seamlessly intertwining with the world of performing and creative arts."
-    />
-    <link rel="icon" href="favicon.ico" />
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to The Tommyverse</title>
+  <link rel="icon" href="../favicon.ico" />
+  <meta
+          name="description"
+          content="Tommy Hills is a passionate STEM communicator, based in Milton Keynes, with their blend of Mathematics, Computer Science, and Education seamlessly intertwining with the world of performing and creative arts."
+  />
 
-    <title>Welcome to the Tommyverse</title>
-    <!-- Ex. CSS stylesheet -->
-    <link rel="stylesheet" href="style.css" />
-    <!-- W3 Schools CSS stylesheet -->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <!-- Font Awesome Icons Stylesheet -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <script
-      src="https://kit.fontawesome.com/173f107a50.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Ex. Javascript -->
-    <script src="script.js"></script>
-  </head>
-  <body>
+    <link rel="stylesheet" href="blog_styles.css" type="text/css">
+  <link rel="stylesheet" href="gallery_grid.css " type="text/css">
+  <link rel="stylesheet" href="website_styles.css" type="text/css">
+  <link rel="stylesheet" href="events_styles.css" type="text/css">
+    <script src="scripts.js"></script>
 
-  <button onclick="location.href='https://thetommyverse.notion.site/get-in-touch?pvs=74';"
-          style="
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background-color: var(--lightyellow, #fdf6b2);
-        color: black;
-        padding: 10px 15px;
-        font-size: 1em;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        z-index: 1000;
-        box-sizing: border-box;
-        transition: transform 0.2s ease, background-color 0.2s ease;
-    "
-          onmouseover="this.style.backgroundColor='var(--yellowalt, #fce96a)'; this.style.transform='scale(1.05)';"
-          onmouseout="this.style.backgroundColor='var(--lightyellow, #fdf6b2)'; this.style.transform='scale(1)';"
-  >
-    <i class="fa-solid fa-envelope"></i><span class="tab_labels"> Get in touch!
-  </button>
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <script
+          src="https://kit.fontawesome.com/173f107a50.js"
+          crossorigin="anonymous"
+  ></script>
 
-    <div class="tabWrapper">
-      <div class="tab">
-        <button
-          class="tablinks"
-          onclick="openTab(event, 'Home')"
-          id="defaultOpen"
-        >
-          <i class="fa fa-home"></i>
-          <span class="tab_labels">Home</span>
-        </button>
-        <button class="tablinks" onclick="openTab(event, 'About')">
-          <i class="fa-solid fa-circle-info"></i>
-          <span class="tab_labels">About</span>
-        </button>
+  <style>
 
-        <button class="tablinks" onclick="openTab(event, 'Events')">
-          <i class="fa-solid fa-calendar-days"></i>
-          <span class="tab_labels">Events</span>
-        </button>
-        <button class="tablinks" onclick="openTab(event, 'Gallery')">
-          <i class="fa-solid fa-camera-retro"></i>
-          <span class="tab_labels">Gallery</span>
-        </button>
-        <button class="tablinks" onclick="location.href='https://tommysthoughts.thetommyverse.com';">
-          <i class="fa-solid fa-file"></i>
-          <span class="tab_labels">Blog</span>
-        </button>
-      </div>
-    </div>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
 
-    <div id="Home" class="tabcontent">
-      <div class="Home_header">
-        <p>
-          <span class="title1">Tommy Hills</span>
-          <span class="title5">BSc.</span>
-        </p>
-      </div>
-      <div class="page_text_container">
-        <div class="page_text_div">
-          <!-- Image of Tommy -->
-          <img
-            class="Home_img"
-            src="Images/PROFILE PICTURE T.PARGETER-GREY.jpg"
-            alt="picture_alt_text"
-          />
+    /* General text container for centering or left-aligning content */
+    .text-container {
+      font-family: Arial, sans-serif;  /* Set font to Arial */;
+      margin: 0 auto;  /* Centers the container */
+      padding: 20px;  /* Add padding around the content */
+      max-width: 900px;  /* Restrict maximum width for better readability */
+    }
 
-          <p>
-            Tommy Hills is a passionate STEM communicator, based in Milton
-            Keynes, with his blend of Mathematics, Computer Science, and
-            Education seamlessly intertwining with the world of performing and
-            creative arts. Currently, Tommy wears multiple hats as a dedicated
-            Masters of Science by Research student at the
-            <a class="inline_link" href="https://www.kent.ac.uk"
-              >University of Kent</a
-            >, Teacher of Computing through the
-            <a class="inline_link" href="https://www.teachfirst.org.uk/"
-              >Teach First Training Programme</a
-            >, enthusiastic STEM communicator and moonlights as a PowerPoint
-            comedian. Tommy's love of stand-up comedy, working with artificial
-            intelligence and exploring the history and nerdy quirks of our
-            mathematical world, culminate in fun and engaging talks and
-            performances, designed to show the full extent of creativity within
-            Computing. What sets Tommy apart is his deep appreciation for
-            performance, historical insights, and the fascinating quirks of the
-            mathematical and computational universe. His diverse interests come
-            together to create captivating talks and performances that are both
-            enjoyable and educational. The mission is to demonstrate that
-            mathematics and computer science extend far beyond the confines of
-            the classroom, proving that they can be both fun and incredibly
-            useful in our everyday lives.
-          </p>
-        </div>
-      </div>
-    </div>
+    /* Optionally, you can control text alignment: */
 
-    <div id="About" class="tabcontent">
-      <div class="pages_titles_container">
-        <p class="title1">About</p>
-        <img src="Images/iccc.jpeg" class="r_image" /> <br>
-        <em>iCCC '23 Conference in Waterloo Canada</em>
+    /* To center the text within the container */
+    .text-container.center {
+      text-align: center;
+    }
 
-        <div class="page_text_container">
-          <div class="page_text_div">
-            <p class="title2">Research</p>
+    /* To left-align the text within the container */
+    .text-container.left {
+      text-align: left;
+    }
 
-            Tommy is a dedicated, determined and dynamic researcher at the
-            <a class="inline_link" href="https://www.kent.ac.uk/"
-              >University of Kent</a
-            >, delving into the creative potential of LLMs (Large Language
-            Models); investigating whether these advanced AI models, such as
-            <a
-              class="inline_link"
-              href="https://www.anthropic.com/news/claude-3-5-sonnet"
-              >Claude 3</a
-            >,
-            <a
-              class="inline_link"
-              href="https://blog.google/technology/ai/google-gemini-ai/"
-              >Google Gemini</a
-            >
-            and
-            <a class="inline_link" href="https://openai.com/research/gpt-4"
-              >GPT-4</a
-            >
-            can prove adept at writing stand-up comedy material. Tommy's work
-            has not gone unnoticed, getting involved in the world of public
-            engagement, sharing insights about their research in various forums.
-            Tommy has worked with
-            <a
-              class="inline_link"
-              href="https://www.bbc.co.uk/programmes/b006pfp8"
-              >BBC News South East</a
-            >, and
-            <a
-              class="inline_link"
-              href="https://www.bbc.co.uk/sounds/play/live:bbc_radio_one"
-              >BBC Radio 1</a
-            >
-            with consultation about the applications of Generative AI in various
-            places. Tommy is not just a researcher; they are a passionate
-            advocate for the dissemination of knowledge and information. They
-            have taken the stage to deliver captivating talks and STEM
-            presentations, aiming to enlighten, educate, and showcase the
-            intriguing intersection of artificial intelligence and comedy.
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+      gap: 15px;
+      padding: 15px;
+      width: 90%; /* Responsive width */
+      max-width: 800px; /* Prevents buttons from stretching too wide */
+    }
 
-            <em
-              >Check out some related photos in the
-              <a class="inline_link_alt" onclick="openTab(event, 'Gallery')"
-                >Gallery</a
-              >.</em
-            >
+    nav button,
+    nav a.nav-btn {
+      background-color: var(--lightpurple);
+      border: none;
+      border-radius: 9999px; /* Fully rounded */
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px; /* Space between icon and text */
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      text-decoration: none;
+      white-space: nowrap; /* Prevents text from breaking */
+    }
 
-            <br />
-            <br>
-            <p class="title2">Performance</p>
-            <br />
-            <div class="performing_images">
-              <img
-                      class="p_image"
-                      src="Images/(1) Anchorage - The Mooring - August 2022.jpeg"
-              />
-            </div>
-            <br>
+    nav button i {
+      font-size: 18px; /* Adjust icon size */
+    }
 
-            Tommy is not only an academic but also a seasoned performer with a
-            passion for captivating audiences through the art of public
-            speaking, stand-up comedy, and spoken-word poetry. Within the realm
-            of stand-up comedy, Tommy has carved out a distinctive niche with
-            their unique style. Known for their love of character comedy infused
-            with the creative use of PowerPoint presentations, earning them the
-            well-deserved moniker of "PPT, the PowerPoint Tommy." This
-            innovative approach adds a dynamic and educational twist to their
-            comedy, delighting audiences with both humour and insightful
-            visuals.
-            <br> <br>
-            <div class="performing_images">
+    nav button:hover,
+    nav a.nav-btn:hover {
+      background-color: var(--mainpurple);
+      transform: scale(1.05);
+    }
 
-              <img class="p_image" src="Images/(2) Stand-Up on the Stour.png" />
-            </div>
-            <br>
-            Tommy's unique comedic style and commitment to entertaining while
-            educating set them apart as a multifaceted performer and academic,
-            making them a standout in both worlds.
-          </div>
-        </div>
-      </div>
-    </div>
+    nav button.active,
+    nav a.nav-btn.active {
+      background-color: var(--mainpurple);
+    }
 
-
-
-    <div id="Events" class="tabcontent">
-      <div class="pages_titles_container">
-        <p class="title1">Events</p>
-        <div class="page_text_container">
-          <div class="page_text_div">
-            <p>
-              Tommy has carved out a unique niche in the world of STEM
-              communication. Through their previous work at the University of
-              Kent, and affiliation with the
-              <a
-                class="inline_link"
-                href="https://www.stem.org.uk/stem-ambassadors"
-                >STEM Ambassadors scheme</a
-              >, armed with a wealth of knowledge and a flair for the
-              spectacular, Tommy aims to make scientific concepts engaging,
-              inspiring and entertaining for a variety of audiences.
-            </p>
-            <p>
-              In their rolodex of talks, expect to find a selection of lectures,
-              talks, stand-up comedy shows and live events
-            </p>
-
-            <p>
-              <em
-                >Check out some related photos in the
-                <a class="inline_link_alt" onclick="openTab(event, 'Gallery')"
-                  >Gallery</a
-                >.</em
-              >
-            </p>
-          </div>
-        </div>
-
-        <div class="pages_titles_container">
-          <p class="title2">Tommy's Events</p>
-        </div>
-        <!-- ! Event No.1 -->
-        <div class="events_container">
-          <div class="events_wrapper">
-            <div class="events_Block" id="ridiculousquirks">
-              <div class="events_Item" style="background-color: #861b00">
-                <img
-                  src="/Events Images/Ridiculous Quirks Carousel Video.gif"
-                  alt="Me"
-                />
-              </div>
-              <div class="events_Text">
-                <blockquote style="font-size: smaller">
-                  <p class="title3">
-                    <b
-                      >The Ridiculous Quirks of a Mathematically Imagined
-                      World</b
-                    >
-                  </p>
-                  <p>
-                    What is Mathematics? A boring school subject. A random
-                    selection of number laws... No!
-                  </p>
-                  <p>
-                    Mathematics is like poetry filled with ridiculous quirks and
-                    wild stories.
-                  </p>
-                  <p>
-                    Prepare to be bewildered or perhaps even learn something.
-                  </p>
-                </blockquote>
-              </div>
-            </div>
-
-            <!-- ! Event No. 2-->
-            <div class="events_Block">
-              <div class="events_Item" style="background-color: #f1b700">
-                <img src="Events Images/Can AI Stand-Up Graphic.png" alt="Me" />
-              </div>
-              <div class="events_Text">
-                <blockquote style="font-size: smaller">
-                  <p class="title3"><b>Can AI Stand-Up?</b></p>
-                  <p>
-                    AI-generated content is taking over the creative world. But
-                    can large-language models replace stand-up comedians.
-                  </p>
-                  <p>
-                    Watch Tommy explore the process of generating stand-up
-                    comedy with AI and whether human comedians are outdated.
-                  </p>
-                </blockquote>
-              </div>
-            </div>
-
-            <!-- ! Event No. 3-->
-            <div class="events_Block">
-              <div class="events_Item" style="background-color: #232323">
-                <img src="Events Images/2035.png" alt="Me" />
-              </div>
-              <div class="events_Text">
-                <blockquote style="font-size: smaller">
-                  <p class="title3"><b>2035 and the Future of AI</b></p>
-                  <p>
-                    Everyone says that AI is going to destroy our future, but is
-                    that truly the case.
-                  </p>
-                  <p>
-                    Let Tommy guide you through the current state of what AI can
-                    do and present a more hopeful future about where it could be
-                    heading.
-                  </p>
-                </blockquote>
-              </div>
-            </div>
-
-            <!-- ! Event No. 4-->
-            <div class="events_Block">
-              <div class="events_Item" style="background-color: #009cdd">
-                <img src="Events Images/presentations.png" alt="Me" />
-              </div>
-              <div class="events_Text">
-                <blockquote style="font-size: smaller">
-                  <p class="title3">
-                    <b>Let's change how we make presentations</b>
-                  </p>
-                  <p>
-                    Making PowerPoint Presentations manually is so 2020. Let's
-                    explore how we can use AI to make our presentations for us.
-                  </p>
-                  <p>
-                    Tommy's code for combining LLM, Stable Diffusion and the
-                    Reveal.js Framework will change the way you make
-                    presentations.
-                  </p>
-                </blockquote>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="Gallery" class="tabcontent">
-      <div class="gallery_wrapper">
-        <div class="gallery_tabcontent">
-          <div class="pages_titles_container_alt">
-            <p class="title1">Gallery</p>
-            <p>A gallery of events, talks and other photography</p>
-          </div>
-
-          <!-- Gallery of Images -->
-          <!-- Container for the image gallery -->
-          <div class="container">
-            <!-- Full-width images with number text -->
-            <div class="mySlides">
-              <div class="numbertext">1 / 16</div>
-              <img
-                src="Slideshow Images/Events Gallery Images/BarCamp - The CompSci Experiment.png"
-                style="width: 100%"
-              />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">2 / 16</div>
-              <img
-                src="Slideshow Images/Events Gallery Images/BarCamp - Stand-Up and AI.png"
-                style="width: 100%"
-              />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">3 / 16</div>
-              <img
-                src="Slideshow Images/Events Gallery Images/BarCamp - Stand-Up and AI 2.png"
-                style="width: 100%"
-              />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">4 / 16</div>
-              <img
-                src="Slideshow Images/Events Gallery Images/BarCamp Stand-Up and AI 3.png"
-                style="width: 100%"
-              />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">5 / 16</div>
-              <img
-                src="Slideshow Images/Events Gallery Images/Ridiculous Quirks 0.png"
-                style="width: 100%"
-              />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">6 / 16</div>
-              <img
-                src="Slideshow Images/Events Gallery Images/Ridiculous Quirks 1.png"
-                style="width: 100%"
-              />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">7 / 16</div>
-              <img
-                src="Slideshow Images/Events Gallery Images/Ridiculous Quirks 2.png"
-                style="width: 100%"
-              />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">8 / 16</div>
-              <img
-                src="Slideshow Images/Events Gallery Images/Can AI Stand-Up UKC.png"
-                style="width: 100%"
-              />
-            </div>
-            <div class="mySlides">
-              <div class="numbertext">9 / 16</div>
-              <img
-                src="Slideshow Images/Events Gallery Images/Can AI Stand-Up - Pint of Science Festival_1.png"
-                style="width: 100%"
-              />
-            </div>
-            <div class="mySlides">
-              <div class="numbertext">10 / 16</div>
-              <img
-                src="Slideshow Images/Events Gallery Images/Pint of Science Festival_2.jpg"
-                style="width: 100%"
-              />
-            </div>
-            <div class="mySlides">
-              <div class="numbertext">11 / 16</div>
-              <img
-                src="Slideshow Images/Events Gallery Images/Pint of Science Festival_3.jpg"
-                style="width: 100%"
-              />
-            </div>
-            <div class="mySlides">
-              <div class="numbertext">12 / 16</div>
-              <img
-                src="Slideshow Images/Events Gallery Images/Pint of Science Festival_4.jpg"
-                style="width: 100%"
-              />
-            </div>
-            <div class="mySlides">
-              <div class="numbertext">13 / 16</div>
-              <img
-                src="Slideshow Images/Events Gallery Images/Pint of Science Festival_5.jpg"
-                style="width: 100%"
-              />
-            </div>
-            <div class="mySlides">
-              <div class="numbertext">14 / 16</div>
-              <img
-                src="Slideshow Images/Events Gallery Images/Pint of Science Festival_6.jpg"
-                style="width: 100%"
-              />
-            </div>
-            <div class="mySlides">
-              <div class="numbertext">15 / 16</div>
-              <img
-                src="Slideshow Images/Events Gallery Images/Wide Shot - Can AI Stand-Up - Pint of Science Festival.png"
-                style="width: 100%"
-              />
-            </div>
-
-            <!-- TODO (ADD THESE BACK IN) Next and previous buttons -->
-            <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
-
-            <!-- Image text -->
-            <div class="caption-container">
-              <p id="caption"></p>
-            </div>
-
-            <!-- Thumbnail images -->
-            <div class="row">
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="Slideshow Images/Events Gallery Images/BarCamp - The CompSci Experiment.png"
-                  style="width: 100%"
-                  onclick="currentSlide(1)"
-                  alt="BarCamp '23 - The CompSci Experiment"
-                />
-              </div>
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="Slideshow Images/Events Gallery Images/BarCamp - Stand-Up and AI.png"
-                  style="width: 100%"
-                  onclick="currentSlide(2)"
-                  alt="BarCamp '23 - Stand-Up and AI"
-                />
-              </div>
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="Slideshow Images/Events Gallery Images/BarCamp - Stand-Up and AI 2.png"
-                  style="width: 100%"
-                  onclick="currentSlide(3)"
-                  alt="BarCamp '23 - What is Creativity?"
-                />
-              </div>
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="Slideshow Images/Events Gallery Images/BarCamp Stand-Up and AI 3.png"
-                  style="width: 100%"
-                  onclick="currentSlide(4)"
-                  alt="BarCamp '23 - Demonstration of AI Stand-Up"
-                />
-              </div>
-
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="Slideshow Images/Events Gallery Images/Ridiculous Quirks 0.png"
-                  style="width: 100%"
-                  onclick="currentSlide(5)"
-                  alt="Ridiculous Quirks - Lecture @ University of Kent"
-                />
-              </div>
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="Slideshow Images/Events Gallery Images/Ridiculous Quirks 1.png"
-                  style="width: 100%"
-                  onclick="currentSlide(6)"
-                  alt="Ridiculous Quirks - Lecture @ University of Kent"
-                />
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="Slideshow Images/Events Gallery Images/Ridiculous Quirks 2.png"
-                  style="width: 100%"
-                  onclick="currentSlide(7)"
-                  alt="Ridiculous Quirks - Lecture @ University of Kent"
-                />
-              </div>
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="Slideshow Images/Events Gallery Images/Can AI Stand-Up UKC.png"
-                  style="width: 100%"
-                  onclick="currentSlide(8)"
-                  alt="Can AI Stand-Up? - Research Talk @ University of Kent"
-                />
-              </div>
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="Slideshow Images/Events Gallery Images/Can AI Stand-Up - Pint of Science Festival_1.png"
-                  style="width: 100%"
-                  onclick="currentSlide(9)"
-                  alt="Can AI Stand-Up? - Pint of Science Festival '23"
-                />
-              </div>
-
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="Slideshow Images/Events Gallery Images/Pint of Science Festival_2.jpg"
-                  style="width: 100%"
-                  onclick="currentSlide(10)"
-                  alt="Can AI Stand-Up? - Pint of Science Festival '23"
-                />
-              </div>
-
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="Slideshow Images/Events Gallery Images/Pint of Science Festival_3.jpg"
-                  style="width: 100%"
-                  onclick="currentSlide(11)"
-                  alt="Can AI Stand-Up? - Pint of Science Festival '23"
-                />
-              </div>
-
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="Slideshow Images/Events Gallery Images/Pint of Science Festival_4.jpg"
-                  style="width: 100%"
-                  onclick="currentSlide(12)"
-                  alt="Can AI Stand-Up? - Pint of Science Festival '23"
-                />
-              </div>
-            </div>
-            <div class="row">
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="Slideshow Images/Events Gallery Images/Pint of Science Festival_5.jpg"
-                  style="width: 100%"
-                  onclick="currentSlide(13)"
-                  alt="Can AI Stand-Up? - Pint of Science Festival '23"
-                />
-              </div>
-
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="Slideshow Images/Events Gallery Images/Pint of Science Festival_6.jpg"
-                  style="width: 100%"
-                  onclick="currentSlide(14)"
-                  alt="Can AI Stand-Up? - Pint of Science Festival '23"
-                />
-              </div>
-
-              <div class="row">
-                <div class="column">
-                  <img
-                    class="demo cursor"
-                    src="Slideshow Images/Events Gallery Images/Wide Shot - Can AI Stand-Up - Pint of Science Festival.png"
-                    style="width: 100%"
-                    onclick="currentSlide(15)"
-                    alt="Can AI Stand-Up? - Pint of Science Festival '23"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer_wrapper">
-      <div class="footer_container">
-        <div class="footer">
-          <p class="footer_title">Find me elsewhere:</p>
-          <button
-            class="footer_links"
-            onclick="location.href='mailto:tommy.hills@thetommyverse.com';"
-          >
-            <i class="fa-solid fa-paper-plane"></i>
-            <span class="tab_labels">Email</span>
-          </button>
-          <button
-            class="footer_links"
-            onclick="location.href='https://x.com/thetommyverse';"
-          >
-            <i class="fa fa-twitter"> </i>
-            <span class="tab_labels">Twitter / X</span>
-          </button>
-          <button
-            class="footer_links"
-            onclick="location.href='https://www.instagram.com/thetommyverse/';"
-          >
-            <i class="fa fa-instagram"></i>
-            <span class="tab_labels">Instagram</span>
-          </button>
-          <button
-            class="footer_links"
-            onclick="location.href='https://www.linkedin.com/in/tommyhills14/';"
-          >
-            <i class="fa fa-linkedin"></i>
-            <span class="tab_labels">LinkedIn</span>
-          </button>
-          <button
-            class="footer_links"
-            onclick="location.href='https://bsky.app/profile/thetommyverse.bsky.social';"
-          >
-            <i class="fa-brands fa-bluesky"></i>
-            <span class="tab_labels">BlueSky</span>
-          </button>
-          <button
-            class="footer_links"
-            onclick="location.href='https://github.com/thetommyverse';"
-          >
-            <i class="fa fa-github"></i>
-            <span class="tab_labels">Github</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      // Get the element with id="defaultOpen" and click on it
-      document.getElementById("defaultOpen").click();
-
-      // Show the first slide of the gallery
-      let slideIndex = Math.floor(Math.random() * 10);
-      showSlides(slideIndex);
-
-      // Show all content in the blog
-      filterSelection("all"); // Execute the function and show all columns
-
-      // Add active class to the current button (highlight it)
-      var btnContainer = document.getElementById("myBtnContainer");
-      var btns = btnContainer.getElementsByClassName("btn");
-      for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function () {
-          var current = document.getElementsByClassName("active");
-          current[0].className = current[0].className.replace(" active", "");
-          this.className += " active";
-        });
+    /* 📱 Mobile Styles - Switch to a 2-column grid */
+    @media (max-width: 600px) {
+      nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2-column layout */
+        gap: 10px; /* Reduce spacing for better fit */
+        width: 100%;
+        max-width: 400px; /* Ensure buttons don’t stretch too wide */
       }
-    </script>
-  </body>
+
+      nav button,
+      nav a.nav-btn {
+        width: 100%; /* Make buttons fill their grid cells */
+        justify-content: center;
+      }
+    }
+
+    /* Correcting the visibility of the content */
+    .content {
+      display: none; /* Hide by default */
+    }
+
+    .content.active {
+      display: block; /* Show when active */
+    }
+
+    .fade {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .content.fade {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <button class="nav-btn active" data-target="home"><i class="fa fa-home"></i> Home</button>
+  <button class="nav-btn" data-target="about"><i class="fa-solid fa-circle-info"></i> About</button>
+  <button class="nav-btn" data-target="events"><i class="fa-solid fa-calendar-days"></i> Events</button>
+  <button class="nav-btn" data-target="gallery"><i class="fa-solid fa-camera-retro"></i> Gallery</button>
+  <button onclick="window.location.href='https://tommysthoughts.thetommyverse.com'"><i class="fa-solid fa-file"></i> Blog</button>
+  <button id="alt_button" onclick="window.location.href='https://thetommyverse.notion.site/get-in-touch'"><i class="fa-solid fa-envelope"></i> Contact</button>
+</nav>
+
+<div id="home" class="content active fade show">
+  <h1>Tommy Hills</h1>
+
+  <div class="image-text-container">
+    <!-- Image Section -->
+    <div class="circle-image">
+      <img src="/Images/PROFILE%20PICTURE%20T.PARGETER-GREY.jpg" alt="">
+    </div>
+
+    <!-- Text Content Section -->
+    <div class="text-content">
+      <p class="text-left">
+        My name is Tommy and I am a passionate STEM communicator and experimentalist based in Milton Keynes. Currently, I wear multiple hats as a dedicated MSc by Research student at the <a class="inline_link" href="https://www.kent.ac.uk"
+      >University of Kent</a
+      >, a Teacher of Computing through the <a class="inline_link" href="https://www.teachfirst.org.uk/"
+      >Teach First Training Programme</a
+      >, and PowerPoint Comedian.
+      </p>
+      <p class="text-left">My love of stand-up comedy and popular performance, combined with my work with artificial intelligence culminates in fun and engaging talks, designed to show the full extent of creativity within Computing.</p>
+      <p class="text-left">The mission has always been to bring the excitement and creativity I've experienced to as many people interested in AI, Mathematics and Computer Science as possible. I wish to show everyone that Mathematics and Computer Science extend far beyond the confines of the classroom, and intertwine with our everyday lives</p>
+    </div>
+  </div>
+
+</div>
+
+<div id="about" class="content">
+  <h1>About</h1>
+  <figure class="outer-img-container">
+  <img src="/Images/iccc.jpeg" alt="">
+    <div>
+      <figcaption>iCCC '23 Conference in Waterloo, Canada</figcaption>
+    </div>
+
+  </figure>
+  <!-- Text Content Section -->
+  <h2>Research</h2>
+  <div class="main-text-container">
+    <p class="text-left">
+      I am a dedicated, determined and dynamic researcher at the <a class="inline_link" href="https://www.kent.ac.uk/"
+    >University of Kent</a
+    >, delving into the creative potential of LLMs (Large Language Models); investigating whether these advanced AI models such as <a
+      class="inline_link"
+      href="https://www.anthropic.com/news/claude-3-5-sonnet"
+      >Claude 3</a
+            >, <a
+            class="inline_link"
+            href="https://blog.google/technology/ai/google-gemini-ai/"
+    >Google Gemini</a
+    > and <a class="inline_link" href="https://openai.com/research/gpt-4"
+    >GPT-4</a
+    > can prove adept at writing stand-up comedy material.
+    </p>
+    <p class="text-left">My work has not gone unnoticed as I've found the wonderful opportunity to get involved in the world of public engagement, sharing insights about my research in various forums.</p>
+    <p class="text-left">I've had the opportunity to work with <a
+            class="inline_link"
+            href="https://www.bbc.co.uk/programmes/b006pfp8"
+    >BBC News South East</a
+    > and <a
+            class="inline_link"
+            href="https://www.bbc.co.uk/sounds/play/live:bbc_radio_one"
+    >BBC Radio 1</a
+    > with consultation about the various applications of generative AI.</p>
+    <br>
+
+    <h2>Performance</h2>
+
+    <figure class="outer-img-container">
+      <img src="/Images/(1)%20Anchorage%20-%20The%20Mooring%20-%20August%202022.jpeg" alt="">
+      <div>
+        <figcaption>Anchorage Spoken-Word Poetry Night</figcaption>
+      </div>
+
+    </figure>
+
+    <p class="text-left">
+      I've tipped my hat into many different types of popular performance, through the art of public speaking, stand-up comedy and spoken-word poetry. Within the domain of stand-up comedy, I've carved a distinctive niche with my love of character comedy and creative use of PowerPoint presentations. This approach adds a dynamic and educational twist to my comedy, delighting audiences with both humour and insightful visuals.
+    </p>
+
+    <figure class="outer-img-container">
+      <img src="/Images/(2)%20Stand-Up%20on%20the%20Stour.png" alt="">
+      <div>
+        <figcaption>Stand-Up on the Stour - 1 Year Anniversary</figcaption>
+      </div>
+
+    </figure>
+
+    <p class="text-left">
+      This unique comedic style and commitment to entertainment while educating sets me apart as a multifaceted performer and academic, making me stand-out across both worlds.
+    </p>
+
+
+    <br>
+    <br>
+  </div>
+
+</div>
+
+<div id="events" class="content fade">
+  <h1>Events</h1>
+  <div class="main-text-container">
+  <p class="text-left">
+    I've carved out a unique niche in the world of STEM communication. Through my previous work at the University of Kent and the <a
+          class="inline_link"
+          href="https://www.stem.org.uk/stem-ambassadors"
+  >STEM Ambassadors scheme</a>, I've aimed to make scientific concepts engaging, inspiring and entertaining for a variety of audiences.
+  </p>
+  <p class="text-left">
+    In my rolodex of talks, expect to find a selection of lectures, talks, stand-up comedy shows and live events.
+  </p>
+  </div>
+
+  <div class="events-grid">
+
+    <div class="event-card">
+      <img class="event-image" src="/Events%20Images/Ridiculous%20Quirks%20Carousel%20Video.gif" alt="Event 2" />
+      <div class="event-content">
+        <div class="event-title">The Ridiculous Quirks of a Mathematically Imagined World</div>
+        <div class="event-description">What is Mathematics? A boring school subject. A random selection of number laws... No!
+          <br> <br>
+          Mathematics is like poetry filled with ridiculous quirks and wild stories.
+          <br> <br>
+          Prepare to be bewildered or perhaps even learn something.</div>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <img class="event-image" src="/Events%20Images/Can%20AI%20Stand-Up%20Graphic.png" alt="Event 2" />
+      <div class="event-content">
+        <div class="event-title">Can AI Stand-Up?</div>
+        <div class="event-description">AI-generated content is taking over the creative world. But can large-language models replace stand-up comedians.
+          <br> <br>
+          Watch Tommy explore the process of generating stand-up comedy with AI and whether human comedians are outdated.</div>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <img class="event-image" src="/Events%20Images/2035.png" alt="Event 2" />
+      <div class="event-content">
+        <div class="event-title">2035 and the Future of AI</div>
+        <div class="event-description">Everyone says that AI is going to destroy our future, but is that truly the case.
+          <br> <br>
+          Let Tommy guide you through the current state of what AI can do and present a more hopeful future about where it could be heading.</div>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <img class="event-image" src="/Events%20Images/presentations.png" alt="Event 1" />
+      <div class="event-content">
+        <div class="event-title">Let's Change How We Make Presentations</div>
+        <div class="event-description">Making PowerPoint Presentations manually is so 2020. Let's explore how we can use AI to make our presentations for us.
+          <br> <br>
+          Tommy's code for combining LLM, Stable Diffusion and the Reveal.js Framework will change the way you make presentations.</div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+</div>
+
+<div id="gallery" class="content fade">
+  <h1>Gallery</h1>
+
+  <p class="text-center">
+    A gallery of events, talks and other photography
+  </p>
+
+  <div class="gallery-container">
+    <!-- Main Image -->
+    <div class="main-image">
+      <img id="mainImg" src="/Slideshow%20Images/Events%20Gallery%20Images/BarCamp%20-%20The%20CompSci%20Experiment.png" alt="Main Image">
+    </div>
+
+    <!-- Thumbnail Images -->
+    <div class="thumbnail-container">
+      <img class="thumbnail active" src="/Slideshow%20Images/Events%20Gallery%20Images/BarCamp%20-%20The%20CompSci%20Experiment.png" alt="Image 1" onclick="changeImage(this)">
+      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/BarCamp%20-%20Stand-Up%20and%20AI.png" alt="Image 2" onclick="changeImage(this)">
+      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/BarCamp%20-%20Stand-Up%20and%20AI%202.png" alt="Image 3" onclick="changeImage(this)">
+      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/BarCamp%20Stand-Up%20and%20AI%203.png" alt="Image 4" onclick="changeImage(this)">
+      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Ridiculous%20Quirks%200.png" alt="Image 5" onclick="changeImage(this)">
+      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Ridiculous%20Quirks%201.png" alt="Image 6" onclick="changeImage(this)">
+      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Ridiculous%20Quirks%202.png" alt="Image 7" onclick="changeImage(this)">
+      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Can%20AI%20Stand-Up%20UKC.png" alt="Image 8" onclick="changeImage(this)">
+      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Can%20AI%20Stand-Up%20-%20Pint%20of%20Science%20Festival_1.png" alt="Image 9" onclick="changeImage(this)">
+      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Wide%20Shot%20-%20Can%20AI%20Stand-Up%20-%20Pint%20of%20Science%20Festival.png" alt="Image 10" onclick="changeImage(this)">
+      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Pint%20of%20Science%20Festival_2.jpg" alt="Image 10" onclick="changeImage(this)">
+      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Pint%20of%20Science%20Festival_3.jpg" alt="Image 10" onclick="changeImage(this)">
+      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Pint%20of%20Science%20Festival_4.jpg" alt="Image 10" onclick="changeImage(this)">
+      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Pint%20of%20Science%20Festival_5.jpg" alt="Image 10" onclick="changeImage(this)">
+      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Pint%20of%20Science%20Festival_6.jpg" alt="Image 10" onclick="changeImage(this)">
+    </div>
+  </div>
+</div>
+
+<div class="footer_wrapper">
+  <div class="footer_container">
+    <div class="footer">
+      <p class="footer_title">Find me elsewhere:</p>
+      <div class="footer_buttons">
+        <button
+                class="footer_links"
+                onclick="location.href='mailto:tommy.hills@thetommyverse.com';"
+        >
+          <i class="fa-solid fa-paper-plane"></i>
+          <span class="tab_labels">Email</span>
+        </button>
+        <button
+                class="footer_links"
+                onclick="location.href='https://x.com/thetommyverse';"
+        >
+          <i class="fa fa-twitter"></i>
+          <span class="tab_labels">Twitter / X</span>
+        </button>
+        <button
+                class="footer_links"
+                onclick="location.href='https://www.instagram.com/thetommyverse/';"
+        >
+          <i class="fa fa-instagram"></i>
+          <span class="tab_labels">Instagram</span>
+        </button>
+        <button
+                class="footer_links"
+                onclick="location.href='https://www.linkedin.com/in/tommyhills14/';"
+        >
+          <i class="fa fa-linkedin"></i>
+          <span class="tab_labels">LinkedIn</span>
+        </button>
+        <button
+                class="footer_links"
+                onclick="location.href='https://bsky.app/profile/thetommyverse.bsky.social';"
+        >
+          <i class="fa-brands fa-bluesky"></i>
+          <span class="tab_labels">BlueSky</span>
+        </button>
+        <button
+                class="footer_links"
+                onclick="location.href='https://github.com/thetommyverse';"
+        >
+          <i class="fa fa-github"></i>
+          <span class="tab_labels">Github</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  // Function to handle page switching with fade effect
+  function switchPage(target) {
+    // Get all sections (content areas)
+    let sections = document.querySelectorAll('.content');
+
+    // Hide all sections and remove the 'active' class
+    sections.forEach(section => {
+      section.classList.remove('active');
+      section.classList.remove('fade');
+    });
+
+    // Get the target section by matching the id (not data-target)
+    let targetSection = document.querySelector(`#${target}`);
+
+    // Show the target section and add the fade class
+    targetSection.classList.add('active');
+    targetSection.classList.add('fade');
+
+    // Update navbar active class
+    updateNavbarActive(target);
+  }
+
+  // Function to handle redirection with a smooth transition
+  function redirectToPage(url) {
+    // Perform a fade-out transition for the current content before redirecting
+    let currentContent = document.querySelector('.fade.show');
+    currentContent.classList.remove('show');
+    currentContent.style.opacity = '0';  // Fade out the content
+
+    // After the fade-out transition, redirect to the target page
+    setTimeout(function () {
+      window.location.href = url;
+    }, 300); // Wait for the fade-out to complete before redirecting
+  }
+
+  // Function to update navbar active class
+  function updateNavbarActive(target) {
+    // Get all navbar buttons
+    let navButtons = document.querySelectorAll('.nav-btn');
+
+    // Remove the 'active' class from all buttons
+    navButtons.forEach(button => {
+      button.classList.remove('active');
+    });
+
+    // Find the button that corresponds to the target page
+    let activeButton = document.querySelector(`.nav-btn[data-target="${target}"]`);
+
+    // Add the 'active' class to the corresponding navbar button
+    if (activeButton) {
+      activeButton.classList.add('active');
+    }
+  }
+
+  // Adding event listeners to navbar buttons
+  document.querySelectorAll('.nav-btn').forEach(button => {
+    button.addEventListener('click', function(event) {
+      // Prevent default behavior for buttons that use data-target
+      event.preventDefault();
+
+      // Check if the button has an 'onclick' handler (for Blog and Contact)
+      if (this.hasAttribute('onclick')) {
+        // If it does, execute the redirection logic
+        const url = this.getAttribute('onclick').replace('window.location.href=', '').replace(/['"]/g, '');
+        redirectToPage(url);
+      } else {
+        // If it's a standard nav button, switch the page with the fade effect
+        const target = this.getAttribute('data-target');
+        switchPage(target);
+      }
+    });
+  });
+</script>
+
+</body>
 </html>
