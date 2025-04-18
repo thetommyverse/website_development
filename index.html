@@ -134,43 +134,47 @@
       visibility: visible;
     }
 
-    /* Banner styling */
     .banner {
       position: relative;
       width: 100%;
+      display: flex;
+      justify-content: center;
       overflow: hidden;
     }
 
     .banner-image {
       width: 100%;
+      max-width: 1200px;    /* Controls max width */
       height: auto;
       display: block;
       animation: fadeInScale 1s ease-out forwards;
       animation-delay: 0.2s;
-      opacity: 0; /* Start hidden */
+      opacity: 0;
     }
 
-    /* Button inside banner */
     .buy-button {
       position: absolute;
-      bottom: 7.5%;
-      left: 76%;
-      transform: translateX(-50%);
-      padding: 5px 10px 5px 10px;
+      bottom: 10%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 5px 10px;
       font-size: 1rem;
       border-radius: 8px;
       white-space: nowrap;
-      background-color: var(--lightpurple);
-      color: white;
+      background-color: var(--lightyellow);
+      color: black;
       text-decoration: none;
-      /* Animation */
       animation: fadeInUp 1s ease-out forwards;
       animation-delay: 1s;
-      opacity: 0; /* Start hidden */
+      opacity: 0;
+      z-index: 2;
     }
 
     .buy-button:hover {
-      background-color: var(--mainpurple);
+      background-color: var(--yellowalt);
+      color:black;
+      border-radius: 8px;
+      transform: scale(1.05);
     }
 
     /* Keyframes for image and button */
