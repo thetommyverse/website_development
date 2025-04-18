@@ -487,4 +487,50 @@
     currentContent.classList.remove('show');
     currentContent.style.opacity = '0';  // Fade out the content
 
-    // After the 
+    // After the fade-out transition, redirect to the target page
+    setTimeout(function () {
+      window.location.href = url;
+    }, 300); // Wait for the fade-out to complete before redirecting
+  }
+
+  // Function to update navbar active class
+  function updateNavbarActive(target) {
+    // Get all navbar buttons
+    let navButtons = document.querySelectorAll('.nav-btn');
+
+    // Remove the 'active' class from all buttons
+    navButtons.forEach(button => {
+      button.classList.remove('active');
+    });
+
+    // Find the button that corresponds to the target page
+    let activeButton = document.querySelector(`.nav-btn[data-target="${target}"]`);
+
+    // Add the 'active' class to the corresponding navbar button
+    if (activeButton) {
+      activeButton.classList.add('active');
+    }
+  }
+
+  // Adding event listeners to navbar buttons
+  document.querySelectorAll('.nav-btn').forEach(button => {
+    button.addEventListener('click', function(event) {
+      // Prevent default behavior for buttons that use data-target
+      event.preventDefault();
+
+      // Check if the button has an 'onclick' handler (for Blog and Contact)
+      if (this.hasAttribute('onclick')) {
+        // If it does, execute the redirection logic
+        const url = this.getAttribute('onclick').replace('window.location.href=', '').replace(/['"]/g, '');
+        redirectToPage(url);
+      } else {
+        // If it's a standard nav button, switch the page with the fade effect
+        const target = this.getAttribute('data-target');
+        switchPage(target);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
