@@ -133,9 +133,77 @@
       opacity: 1;
       visibility: visible;
     }
+
+    /* Banner styling */
+    .banner {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .banner-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      animation: fadeInScale 1s ease-out forwards;
+      animation-delay: 0.2s;
+      opacity: 0; /* Start hidden */
+    }
+
+    /* Button inside banner */
+    .buy-button {
+      position: absolute;
+      bottom: 7.5%;
+      left: 76%;
+      transform: translateX(-50%);
+      padding: 5px 10px 5px 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      white-space: nowrap;
+      background-color: var(--lightpurple);
+      color: white;
+      text-decoration: none;
+      /* Animation */
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 1s;
+      opacity: 0; /* Start hidden */
+    }
+
+    .buy-button:hover {
+      background-color: var(--mainpurple);
+    }
+
+    /* Keyframes for image and button */
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: scale(1.05);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, 30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+
   </style>
 </head>
 <body>
+
+<header class="banner">
+  <img src="/Images/The%20Comedy%20Singularity%20-%20Website%20Banner.png" alt="The Comedy Singularity - Advertisement" class="banner-image">
+  <a href="https://watfringe.co.uk/events/the-comedy-singularity-2/" class="buy-button">Buy Tickets</a>
+</header>
 
 <nav>
   <button class="nav-btn active" data-target="home"><i class="fa fa-home"></i> Home</button>
@@ -419,50 +487,4 @@
     currentContent.classList.remove('show');
     currentContent.style.opacity = '0';  // Fade out the content
 
-    // After the fade-out transition, redirect to the target page
-    setTimeout(function () {
-      window.location.href = url;
-    }, 300); // Wait for the fade-out to complete before redirecting
-  }
-
-  // Function to update navbar active class
-  function updateNavbarActive(target) {
-    // Get all navbar buttons
-    let navButtons = document.querySelectorAll('.nav-btn');
-
-    // Remove the 'active' class from all buttons
-    navButtons.forEach(button => {
-      button.classList.remove('active');
-    });
-
-    // Find the button that corresponds to the target page
-    let activeButton = document.querySelector(`.nav-btn[data-target="${target}"]`);
-
-    // Add the 'active' class to the corresponding navbar button
-    if (activeButton) {
-      activeButton.classList.add('active');
-    }
-  }
-
-  // Adding event listeners to navbar buttons
-  document.querySelectorAll('.nav-btn').forEach(button => {
-    button.addEventListener('click', function(event) {
-      // Prevent default behavior for buttons that use data-target
-      event.preventDefault();
-
-      // Check if the button has an 'onclick' handler (for Blog and Contact)
-      if (this.hasAttribute('onclick')) {
-        // If it does, execute the redirection logic
-        const url = this.getAttribute('onclick').replace('window.location.href=', '').replace(/['"]/g, '');
-        redirectToPage(url);
-      } else {
-        // If it's a standard nav button, switch the page with the fade effect
-        const target = this.getAttribute('data-target');
-        switchPage(target);
-      }
-    });
-  });
-</script>
-
-</body>
-</html>
+    // After the 
