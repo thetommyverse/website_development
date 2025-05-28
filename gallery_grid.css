@@ -1,86 +1,52 @@
-/* 🔹 Gallery Container */
+.gallery-search {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.gallery-search input[type="text"] {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+}
+
 .gallery-container {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
-/* 🔹 Main Image */
-.gallery-container .main-image {
-    background: var(--mainwhite);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    padding: 10px;
-    width: 60%; /* Side-by-side layout */
-    box-sizing: border-box;
-}
-
-.gallery-container .main-image img {
+.main-image img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out;
-}
-
-/* 🔹 Thumbnail Container */
-.gallery-container .thumbnail-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns in the vertical grid */
-    gap: 10px;
-    width: 40%; /* Side-by-side layout */
-    max-width: 320px;
-    box-sizing: border-box;
-}
-
-/* 🔹 Thumbnail Styling */
-.gallery-container .thumbnail {
-    width: 100%;
-    height: 80px;
-    object-fit: cover;
+    max-width: 800px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+}
+
+.thumbnail-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.thumbnail {
+    width: 150px;
+    height: auto;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
 }
 
-.gallery-container .thumbnail:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.gallery-container .thumbnail.active {
-    border: 3px solid var(--mainpurple);
+.thumbnail:hover {
     transform: scale(1.05);
 }
 
-/* 📱 Mobile/Tablet Styles */
-@media (max-width: 900px) {
-    .gallery-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .gallery-container .main-image,
-    .gallery-container .thumbnail-container {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .gallery-container .thumbnail-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .gallery-container .thumbnail-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.hidden {
+    display: none !important;
 }
