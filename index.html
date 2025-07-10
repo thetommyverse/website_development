@@ -7,21 +7,21 @@
   <title>Welcome to The Tommyverse | Tommy Hills - STEM Communicator & Comedian</title>
 
   <meta name="description" content="Tommy Hills is a passionate STEM communicator and performer based in Milton Keynes, blending Mathematics, Computer Science, Education, and the performing arts. Creator of the human + AI comedy show 'The Comedy Singularity'.">
-  <meta name="keywords" content="Tommy Hills, STEM communicator, comedian, AI comedy, The Comedy Singularity, Watford Fringe, Milton Keynes, mathematics, computer science, creative arts, science communication, education, tech comedy">
+  <meta name="keywords" content="Tommy Hills, STEM communicator, comedian, AI comedy, The Comedy Singularity, Milton Keynes, mathematics, computer science, creative arts, science communication, education, tech comedy">
   <meta name="author" content="Tommy Hills">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thetommyverse.com/">
   <meta property="og:title" content="Welcome to The Tommyverse | Tommy Hills">
-  <meta property="og:description" content="Explore the world of Tommy Hills: STEM communicator, comedian, and creator of the hit AI comedy show 'The Comedy Singularity'.">
+  <meta property="og:description" content="Explore the world of Tommy Hills: STEM communicator, comedian and blogger.'.">
   <!-- TODO <meta property="og:image" content="https://thetommyverse.com/images/og-image.jpg"> -->
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://thetommyverse.com/">
   <meta name="twitter:title" content="Welcome to The Tommyverse | Tommy Hills">
-  <meta name="twitter:description" content="Explore the world of Tommy Hills: STEM communicator, comedian, and creator of the hit AI comedy show 'The Comedy Singularity'.">
+  <meta name="twitter:description" content="Explore the world of Tommy Hills: STEM communicator, comedian, and blogger..">
   <!--TODO <meta name="twitter:image" content="https://thetommyverse.com/images/og-image.jpg">  -->
 
   <link rel="icon" href="../favicon.ico" type="image/x-icon" />
@@ -214,6 +214,37 @@
       }
     }
 
+    .button-pair {
+      display: inline-flex;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .button-pair button {
+      border: none;
+      border-radius: 0;
+      margin: 0;
+    }
+
+    .button-pair button:first-child {
+      border-right: 1px solid rgba(0, 0, 0, 0.1); /* Optional visual divider */
+    }
+
+    .button-pair button:hover {
+      z-index: 1; /* To prevent slight border bleed on hover if styled */
+    }
+    /* Responsive: stack buttons vertically on narrow screens */
+    @media (max-width: 600px) {
+      .button-pair {
+        flex-direction: column;
+      }
+
+      .button-pair button:first-child {
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -223,8 +254,18 @@
   <button class="nav-btn" data-target="about"><i class="fa-solid fa-circle-info"></i> About</button>
   <button class="nav-btn" data-target="events"><i class="fa-solid fa-calendar-days"></i> Events</button>
   <button class="nav-btn" data-target="gallery"><i class="fa-solid fa-camera-retro"></i> Gallery</button>
-  <button onclick="window.location.href='https://tommysthoughts.thetommyverse.com'"><i class="fa-solid fa-file"></i> Blog</button>
-  <button id="alt_button" onclick="window.location.href='https://thetommyverse.notion.site/get-in-touch'"><i class="fa-solid fa-envelope"></i> Contact</button>
+  <div class="button-pair">
+    <button onclick="window.location.href='https://tommysthoughts.thetommyverse.com'">
+      <i class="fa-solid fa-comment"></i> Blog
+    </button>
+    <button onclick="window.location.href='https://thetommyverse.notion.site/the-resources'">
+      <i class="fa-solid fa-file"></i> Resources
+    </button>
+  </div>
+  <button onclick="window.location.href='https://thetommyverse.notion.site/get-in-touch'"><i class="fa-solid fa-envelope"></i> Contact</button>
+
+
+
 </nav>
 
 <div id="home" class="content active fade show">
