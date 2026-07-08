@@ -10,250 +10,592 @@
   <meta name="keywords" content="Tommy Hills, STEM communicator, comedian, AI comedy, The Comedy Singularity, Milton Keynes, mathematics, computer science, creative arts, science communication, education, tech comedy">
   <meta name="author" content="Tommy Hills">
 
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thetommyverse.com/">
   <meta property="og:title" content="Welcome to The Tommyverse | Tommy Hills">
-  <meta property="og:description" content="Explore the world of Tommy Hills: STEM communicator, comedian and blogger.'.">
-  <!-- TODO <meta property="og:image" content="https://thetommyverse.com/images/og-image.jpg"> -->
+  <meta property="og:description" content="Explore the world of Tommy Hills: STEM communicator, comedian and blogger.">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://thetommyverse.com/">
   <meta name="twitter:title" content="Welcome to The Tommyverse | Tommy Hills">
-  <meta name="twitter:description" content="Explore the world of Tommy Hills: STEM communicator, comedian, and blogger..">
-  <!--TODO <meta name="twitter:image" content="https://thetommyverse.com/images/og-image.jpg">  -->
+  <meta name="twitter:description" content="Explore the world of Tommy Hills: STEM communicator, comedian, and blogger.">
 
   <link rel="icon" href="../favicon.ico" type="image/x-icon" />
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="blog_styles.css" type="text/css">
-  <link rel="stylesheet" href="gallery_grid.css" type="text/css">
-  <link rel="stylesheet" href="website_styles.css" type="text/css">
-  <link rel="stylesheet" href="events_styles.css" type="text/css">
-
-  <!-- Scripts -->
-  <script src="scripts.js" defer></script>
-
-  <!-- Font Awesome (choose ONE method; using kit is better for performance & flexibility) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/173f107a50.js" crossorigin="anonymous" defer></script>
 
-
   <style>
+    :root {
+        --color-purple: #6b21a8;
+        --color-purple-dark: #4c1d95;
+        --color-purple-light: #9333ea;
+        --color-yellow: #eab308;
+        --color-yellow-light: #fef08a;
+        --color-black: #111111;
+        --color-white: #ffffff;
+        --color-grey-light: #f4f4f5;
+        
+        --font-main: 'Poppins', system-ui, -apple-system, sans-serif;
+        --ease-hover: ease-out; 
+    }
 
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
+        font-family: var(--font-main);
+        background-color: #f8fafc;
+        background-image: 
+            radial-gradient(circle at 10% 20%, rgba(107, 33, 168, 0.06) 0px, transparent 40%),
+            radial-gradient(circle at 90% 80%, rgba(234, 179, 8, 0.06) 0px, transparent 40%),
+            radial-gradient(circle at 80% 10%, rgba(107, 33, 168, 0.06) 0px, transparent 40%),
+            radial-gradient(circle at 20% 90%, rgba(234, 179, 8, 0.06) 0px, transparent 40%);
+        background-attachment: fixed;
+        color: var(--color-black);
+        line-height: 1.6;
+        overflow-x: hidden;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
     }
 
-    /* General text container for centering or left-aligning content */
-    .text-container {
-      font-family: Arial, sans-serif;  /* Set font to Arial */;
-      margin: 0 auto;  /* Centers the container */
-      padding: 20px;  /* Add padding around the content */
-      max-width: 900px;  /* Restrict maximum width for better readability */
+    h1, h2, h3 { text-shadow: 2px 4px 10px rgba(0,0,0,0.1); }
+
+    h1 { 
+        font-size: 4rem; 
+        line-height: 1.1; 
+        margin: 0 0 2rem 0; 
+        color: var(--color-purple-dark); 
+        font-weight: 800; 
+        position: relative;
+        z-index: 2;
     }
 
-    /* Optionally, you can control text alignment: */
-
-    /* To center the text within the container */
-    .text-container.center {
-      text-align: center;
+    h2 { 
+        font-size: 2.5rem; 
+        color: var(--color-purple); 
+        margin: 2.5rem 0 1.5rem 0; 
+        font-weight: 800; 
+        display: inline-block; 
+        position: relative; 
+        cursor: default;
     }
 
-    /* To left-align the text within the container */
-    .text-container.left {
-      text-align: left;
+    h2::after { 
+        content: ''; 
+        position: absolute; 
+        left: 0; 
+        bottom: -5px; 
+        width: 30%; 
+        height: 6px; 
+        background: var(--color-purple); 
+        border-radius: 3px; 
+        box-shadow: 1px 2px 5px rgba(0,0,0,0.2); 
+        transition: width 0.4s cubic-bezier(0.5, 0, 0, 1); 
+    }
+
+    h2:hover::after { width: 100%; }
+
+    .bg-animated-purple h2::after {
+        background: var(--color-yellow);
+    }
+
+    .main-text-container {
+        width: 80%; 
+        max-width: 900px;
+        margin: 0 auto; 
+        color: #444; 
+    }
+
+    .main-text-container p {
+        text-align: left; 
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        line-height: 1.8;
+    }
+
+    .inline_link {
+        font-weight: 800;
+        color: var(--color-purple);
+        text-decoration: none;
+        padding: 2px 6px;
+        border-radius: 4px;
+        transition: background-color 0.15s var(--ease-hover), color 0.15s var(--ease-hover);
+    }
+
+    .inline_link:hover {
+        background-color: var(--color-purple);
+        color: var(--color-white) !important;
+        text-decoration: none;
+    }
+
+    .bg-animated-purple {
+        background: linear-gradient(-45deg, var(--color-purple-dark), var(--color-purple), #3b0764, var(--color-purple-light));
+        background-size: 400% 400%;
+        animation: gradientMove 12s ease infinite;
+        color: var(--color-white);
+        width: 100%;
+        
+        --glass-bg: rgba(255, 255, 255, 0.05);
+        --glass-border: rgba(255, 255, 255, 0.15);
+        --glass-shadow: rgba(0, 0, 0, 0.2);
+        --glass-shadow-hover: rgba(0, 0, 0, 0.4);
+        --glass-bg-hover: rgba(255, 255, 255, 0.1);
+        --card-text: var(--color-white);
+    }
+
+    @keyframes gradientMove { 
+        0% { background-position: 0% 50%; } 
+        50% { background-position: 100% 50%; } 
+        100% { background-position: 0% 50%; } 
+    }
+
+    .bg-animated-purple h1, 
+    .bg-animated-purple h2, 
+    .bg-animated-purple p { 
+        color: var(--color-white); 
+    }
+
+    .bg-animated-purple .inline_link {
+        color: var(--color-yellow);
+    }
+    
+    .bg-animated-purple .inline_link:hover {
+        background-color: var(--color-purple-dark);
+        color: var(--color-white) !important;
+    }
+
+    #hero-canvas { 
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%; 
+        pointer-events: none; 
+        z-index: 0; 
+        opacity: 0.8; 
+    }
+
+    .content-section {
+        padding: 6rem 10%;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .slant-top-bottom { 
+        clip-path: polygon(0 4rem, 100% 0, 100% calc(100% - 4rem), 0 100%); 
+        margin-top: -4rem; 
+        padding-top: 10rem; 
+        padding-bottom: 10rem; 
+        z-index: 5; 
+    }
+
+    .tuck-under {
+        margin-top: -4rem;
+        padding-top: 10rem;
+        position: relative;
+        z-index: 2;
     }
 
     nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
-      gap: 15px;
-      padding: 15px;
-      width: 90%; /* Responsive width */
-      max-width: 800px; /* Prevents buttons from stretching too wide */
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 20px;
+        width: 90%;
+        max-width: 900px;
+        margin-top: 1rem;
+        position: relative;
+        z-index: 10; 
     }
 
     nav button,
     nav a.nav-btn {
-      background-color: var(--lightpurple);
-      border: none;
-      border-radius: 9999px; /* Fully rounded */
-      color: white;
-      padding: 12px 24px;
-      font-size: 16px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px; /* Space between icon and text */
-      transition: transform 0.2s ease, background-color 0.2s ease;
-      text-decoration: none;
-      white-space: nowrap; /* Prevents text from breaking */
+        background-color: var(--color-purple);
+        color: var(--color-white);
+        font-family: var(--font-main);
+        font-weight: 600;
+        border: none;
+        border-radius: 100px; 
+        padding: 12px 24px;
+        font-size: 1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px; 
+        transition: transform 0.15s var(--ease-hover), background-color 0.15s var(--ease-hover), box-shadow 0.15s var(--ease-hover);
+        text-decoration: none;
+        white-space: nowrap; 
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
-    nav button i {
-      font-size: 18px; /* Adjust icon size */
-    }
+    nav button i { font-size: 1.1rem; }
 
     nav button:hover,
     nav a.nav-btn:hover {
-      background-color: var(--mainpurple);
-      transform: scale(1.05);
+        background-color: var(--color-purple-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(107, 33, 168, 0.2);
     }
 
     nav button.active,
     nav a.nav-btn.active {
-      background-color: var(--mainpurple);
-    }
-
-    /* 📱 Mobile Styles - Switch to a 2-column grid */
-    @media (max-width: 600px) {
-      nav {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2-column layout */
-        gap: 10px; /* Reduce spacing for better fit */
-        width: 100%;
-        max-width: 400px; /* Ensure buttons don’t stretch too wide */
-      }
-
-      nav button,
-      nav a.nav-btn {
-        width: 100%; /* Make buttons fill their grid cells */
-        justify-content: center;
-      }
-    }
-
-    /* Correcting the visibility of the content */
-    .content {
-      display: none; /* Hide by default */
-    }
-
-    .content.active {
-      display: block; /* Show when active */
-    }
-
-    .fade {
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-
-    .content.fade {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .banner {
-      position: relative;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .banner-image {
-      width: 100%;
-      max-width: 1200px;    /* Controls max width */
-      height: auto;
-      display: block;
-      animation: fadeInScale 1s ease-out forwards;
-      animation-delay: 0.2s;
-      opacity: 0;
-    }
-
-    .buy-button {
-      position: absolute;
-      bottom: 10%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 5px 10px;
-      font-size: 1rem;
-      border-radius: 8px;
-      white-space: nowrap;
-      background-color: var(--lightyellow);
-      color: black;
-      text-decoration: none;
-      animation: fadeInUp 1s ease-out forwards;
-      animation-delay: 1s;
-      opacity: 0;
-      z-index: 2;
-    }
-
-    .buy-button:hover {
-      background-color: var(--yellowalt);
-      color:black;
-      border-radius: 8px;
-      transform: scale(1.05);
-    }
-
-    /* Keyframes for image and button */
-    @keyframes fadeInScale {
-      0% {
-        opacity: 0;
-        transform: scale(1.05);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translate(-50%, 30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translate(-50%, 0);
-      }
+        background-color: var(--color-yellow);
+        color: var(--color-black);
+        font-weight: 800;
+        box-shadow: 0 4px 10px rgba(234, 179, 8, 0.3);
     }
 
     .button-pair {
-      display: inline-flex;
-      border-radius: 999px;
-      overflow: hidden;
+        display: inline-flex;
+        border-radius: 100px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
     .button-pair button {
-      border: none;
-      border-radius: 0;
-      margin: 0;
-    }
-
-    .button-pair button:first-child {
-      border-right: 1px solid rgba(0, 0, 0, 0.1); /* Optional visual divider */
+        border-radius: 0;
+        box-shadow: none; 
     }
 
     .button-pair button:hover {
-      z-index: 1; /* To prevent slight border bleed on hover if styled */
+        transform: none; 
+        background-color: var(--color-purple-dark);
     }
-    /* Responsive: stack buttons vertically on narrow screens */
-    @media (max-width: 600px) {
-      .button-pair {
+
+    .button-pair button:first-child { border-right: 2px solid rgba(255, 255, 255, 0.2); }
+
+
+    .content { display: none; width: 100%; }
+    .content.active { display: block; }
+    .fade { opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease; }
+    .content.fade.show-tab { opacity: 1; visibility: visible; }
+
+
+    .image-text-container {
+        display: flex;
+        align-items: center; 
+        gap: 3rem; 
+        flex-wrap: wrap; 
+        margin: 0 auto;
+        width: 90%; 
+        max-width: 1000px; 
+        position: relative;
+        z-index: 2;
+    }
+
+    .circle-image {
+        background-color: rgba(255, 255, 255, 0.65); 
+        border: 4px solid var(--color-white); 
+        border-radius: 50%; 
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+        overflow: hidden;
+        transition: transform 0.15s var(--ease-hover), box-shadow 0.15s var(--ease-hover); 
+        width: 50vw; 
+        max-width: 350px; 
+        height: 50vw; 
+        max-height: 350px; 
+        margin-bottom: 2rem; 
+        position: relative;
+        z-index: 1;
+    }
+
+    .circle-image:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(107, 33, 168, 0.15);
+    }
+
+    .circle-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+    .text-content { flex: 1; max-width: 600px; text-align: left; }
+    
+    .text-content p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+    }
+
+
+    .outer-img-container { margin: 3rem auto; text-align: center; }
+    .outer-img-container img { max-width: 100%; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); display: block; margin: 0 auto; }
+    figcaption { font-size: 0.95rem; color: #666; margin-top: 1rem; font-style: italic; display: block; }
+    
+    .bg-animated-purple figcaption { color: rgba(255,255,255,0.7); }
+
+
+    .gallery-container {
+        display: flex;
         flex-direction: column;
-      }
-
-      .button-pair button:first-child {
-        border-right: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      }
+        align-items: center;
+        margin-bottom: 4rem;
+        width: 90%;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
+    .main-image img {
+        width: 100%;
+        max-width: 800px;
+        border-radius: 20px;
+        border: 4px solid var(--color-white);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        margin-bottom: 3rem;
+        transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+    }
+
+    .thumbnail-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    .thumbnail {
+        width: 120px;
+        height: 80px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 12px;
+        border: 3px solid transparent;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: transform 0.15s var(--ease-hover), border-color 0.15s var(--ease-hover);
+    }
+
+    .thumbnail:hover {
+        transform: translateY(-5px);
+        border-color: var(--color-purple-light);
+    }
+
+    .thumbnail.active {
+        border-color: var(--color-yellow);
+        transform: scale(1.05);
+        box-shadow: 0 8px 15px rgba(234, 179, 8, 0.2);
+    }
+
+
+    .events-grid {
+        max-width: 1000px; 
+        margin: 0 auto;
+        padding: 0 1rem; 
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+        gap: 3rem;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+
+    .event-card {
+        display: flex;
+        flex-direction: column; 
+        background: var(--glass-bg, rgba(255, 255, 255, 0.65));
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.6));
+        border-top: 8px solid var(--color-purple);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px var(--glass-shadow, rgba(0,0,0,0.05));
+        transition: transform 0.15s ease-out, border-top-color 0.15s ease-out, box-shadow 0.15s ease-out, background 0.15s ease-out;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    .event-card:hover {
+        transform: translateY(-10px);
+        border-top-color: var(--color-yellow);
+        box-shadow: 0 15px 40px var(--glass-shadow-hover, rgba(107, 33, 168, 0.15));
+        background: var(--glass-bg-hover, rgba(255, 255, 255, 0.85));
+    }
+
+    .event-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .event-content {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        box-sizing: border-box;
+    }
+
+    .event-title {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        color: var(--card-text, var(--color-purple));
+        transition: color 0.15s ease-out;
+    }
+
+    .event-card:hover .event-title {
+        color: var(--color-yellow);
+    }
+
+    .event-description {
+        font-size: 1.1rem;
+        color: var(--card-text, #444);
+        line-height: 1.6;
+    }
+
+
+    .footer_wrapper {
+        background-color: var(--color-black); 
+        padding: 4rem 10%;
+        color: var(--color-grey-light); 
+        text-align: center;
+        width: 100%;
+        position: relative;
+        z-index: 5;
+        box-sizing: border-box;
+    }
+
+    .footer_container { margin: 0 auto; }
+    .footer { display: flex; flex-direction: column; align-items: center; }
+
+    .footer_title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        font-weight: 800;
+        color: var(--color-white);
+        text-shadow: none;
+    }
+
+    .footer_buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .footer_links {
+        display: inline-flex; 
+        align-items: center; 
+        gap: 12px; 
+        padding: 1rem 3rem;
+        background-color: var(--color-yellow); 
+        color: var(--color-black); 
+        text-decoration: none;
+        font-weight: 800; 
+        border-radius: 100px; 
+        font-size: 1.1rem;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.15s var(--ease-hover), background-color 0.15s var(--ease-hover), box-shadow 0.15s var(--ease-hover);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3); 
+        text-transform: uppercase; 
+        letter-spacing: 1.5px;
+    }
+
+    .footer_links:hover {
+        background-color: var(--color-yellow-light); 
+        transform: translateY(-5px); 
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+
+    .hidden-up { opacity: 0; transform: translateY(60px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+    .hidden-left { opacity: 0; transform: translateX(-60px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+    .hidden-right { opacity: 0; transform: translateX(60px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+    
+    .show { opacity: 1; transform: translate(0); }
+    
+    .delay-1 { transition-delay: 150ms; }
+    .delay-2 { transition-delay: 300ms; }
+    .delay-3 { transition-delay: 450ms; }
+
+    @media (max-width: 768px) {
+        h1 { font-size: 3rem; }
+        .slant-top-bottom { clip-path: polygon(0 2rem, 100% 0, 100% calc(100% - 2rem), 0 100%); margin-top: -2rem; padding-top: 6rem; padding-bottom: 6rem; }
+        .tuck-under { margin-top: -2rem; padding-top: 6rem; }
+        .image-text-container { flex-direction: column; gap: 2rem; }
+        .circle-image { width: 80vw; height: 80vw; max-width: 300px; max-height: 300px; }
+        .text-content { text-align: center; }
+    }
+
+    @media (max-width: 600px) {
+        nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 400px; }
+        nav button, nav a.nav-btn { width: 100%; justify-content: center; }
+        .button-pair { flex-direction: column; border-radius: 16px; }
+        .button-pair button:first-child { border-right: none; border-bottom: 2px solid rgba(255, 255, 255, 0.2); }
+    }
+
+    .thesis-btn {
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    transition: transform 0.2s, background-color 0.2s;
+    display: inline-block;
+}
+
+.thesis-btn-purple {
+    background-color: var(--color-purple);
+    color: var(--color-white);
+}
+
+.thesis-btn-purple:hover {
+    background-color: var(--color-purple-dark);
+    transform: translateY(-3px);
+}
+
+.thesis-btn-yellow {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+}
+
+.thesis-btn-yellow:hover {
+    background-color: var(--color-yellow-light);
+    transform: translateY(-3px);
+}
+
+.essay-viewer-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem;
+            /* Applying your signature glassmorphism */
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .essay-toc {
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .essay-toc ul { list-style: none; padding: 0; }
+        .essay-toc li { margin: 8px 0; font-weight: 600; }
+        .essay-toc a { color: var(--color-purple); text-decoration: none; transition: 0.2s; }
+        .essay-toc a:hover { color: var(--color-purple-dark); transform: translateX(5px); display: inline-block; }
+
+        .source {
+          color: var(--color-purple-dark);
+          font-size: 0.9rem;
+          margin-top: 1rem;
+          text-decoration: emphasis;
+        }
   </style>
 </head>
 <body>
 
 <nav>
-  <button class="nav-btn active" data-target="home"><i class="fa fa-home"></i> Home</button>
-  <button class="nav-btn" data-target="about"><i class="fa-solid fa-circle-info"></i> About</button>
-  <button class="nav-btn" data-target="events"><i class="fa-solid fa-calendar-days"></i> Events</button>
-  <button class="nav-btn" data-target="gallery"><i class="fa-solid fa-camera-retro"></i> Gallery</button>
+  <button class="nav-btn active" data-target="home" onclick="updateURL('home')"><i class="fa fa-home"></i> Home</button>
+  <button class="nav-btn" data-target="about" onclick="updateURL('about')"><i class="fa-solid fa-circle-info"></i> About</button>
+  <button class="nav-btn" data-target="events" onclick="updateURL('events')"><i class="fa-solid fa-calendar-days"></i> Events</button>
+  <button class="nav-btn" data-target="gallery" onclick="updateURL('gallery')"><i class="fa-solid fa-camera-retro"></i> Gallery</button>
+  
   <div class="button-pair">
     <button onclick="window.location.href='https://tommysthoughts.thetommyverse.com'">
       <i class="fa-solid fa-comment"></i> Blog
@@ -262,372 +604,1163 @@
       <i class="fa-solid fa-file"></i> Resources
     </button>
   </div>
-  <button onclick="window.location.href='https://thetommyverse.notion.site/get-in-touch'"><i class="fa-solid fa-envelope"></i> Contact</button>
-
-
-
+  <button onclick="window.location.href='https://thetommyverse.notion.site/get-in-touch'">
+    <i class="fa-solid fa-envelope"></i> Contact
+  </button>
 </nav>
 
-<div id="home" class="content active fade show">
-  <h1>Tommy Hills</h1>
+<div id="home" class="content active fade show-tab">
+  <section class="bg-animated-purple content-section" style="min-height: 85vh; display: flex; flex-direction: column; justify-content: center; padding-top: 4rem;">
+    <canvas id="hero-canvas"></canvas>
+    
+    <h1 class="hidden-up">Tommy Hills</h1>
 
-  <div class="image-text-container">
-    <!-- Image Section -->
-    <div class="circle-image">
-      <img src="/Images/PROFILE%20PICTURE%20T.PARGETER-GREY.jpg" alt="">
+    <div class="image-text-container">
+      <div class="circle-image hidden-left delay-1">
+        <img src="/Images/PROFILE%20PICTURE%20T.PARGETER-GREY.jpg" alt="Tommy Hills Profile" loading="lazy">
+      </div>
+
+      <div class="text-content hidden-right delay-2">
+        <p>
+          My name is Tommy and I am a passionate STEM communicator and experimentalist based in Milton Keynes. Currently, I wear multiple hats as a dedicated MSc by Research student at the <a class="inline_link" href="https://www.kent.ac.uk">University of Kent</a>, a Teacher of Computing through the <a class="inline_link" href="https://www.teachfirst.org.uk/">Teach First Training Programme</a>, and PowerPoint Comedian.
+        </p>
+        <p>
+          My love of stand-up comedy and popular performance, combined with my work with artificial intelligence culminates in fun and engaging talks, designed to show the full extent of creativity within Computing. The mission has always been to bring the excitement and creativity I've experienced to as many people interested in AI, Mathematics and Computer Science as possible.
+        </p>
+      </div>
     </div>
-
-    <!-- Text Content Section -->
-    <div class="text-content">
-      <p class="text-left">
-        My name is Tommy and I am a passionate STEM communicator and experimentalist based in Milton Keynes. Currently, I wear multiple hats as a dedicated MSc by Research student at the <a class="inline_link" href="https://www.kent.ac.uk"
-      >University of Kent</a
-      >, a Teacher of Computing through the <a class="inline_link" href="https://www.teachfirst.org.uk/"
-      >Teach First Training Programme</a
-      >, and PowerPoint Comedian.
-      </p>
-      <p class="text-left">My love of stand-up comedy and popular performance, combined with my work with artificial intelligence culminates in fun and engaging talks, designed to show the full extent of creativity within Computing.</p>
-      <p class="text-left">The mission has always been to bring the excitement and creativity I've experienced to as many people interested in AI, Mathematics and Computer Science as possible. I wish to show everyone that Mathematics and Computer Science extend far beyond the confines of the classroom, and intertwine with our everyday lives</p>
-    </div>
-  </div>
-
+  </section>
 </div>
 
-<div id="about" class="content">
-  <h1>About</h1>
-  <!-- Text Content Section -->
-  <h2>Research</h2>
-  <div class="main-text-container">
-    <p class="text-left">
-      I am a dedicated, determined and dynamic researcher at the <a class="inline_link" href="https://www.kent.ac.uk/"
-    >University of Kent</a
-    >, delving into the creative potential of LLMs (Large Language Models); investigating whether these advanced AI models such as <a
-      class="inline_link"
-      href="https://www.anthropic.com/news/claude-3-5-sonnet"
-      >Claude 3</a
-            >, <a
-            class="inline_link"
-            href="https://blog.google/technology/ai/google-gemini-ai/"
-    >Google Gemini</a
-    > and <a class="inline_link" href="https://openai.com/research/gpt-4"
-    >GPT-4</a
-    > can prove adept at writing stand-up comedy material.
-    </p>
-    <p class="text-left">My work has not gone unnoticed as I've found the wonderful opportunity to get involved in the world of public engagement, sharing insights about my research in various forums.</p>
-    <p class="text-left">I've had the opportunity to work with <a
-            class="inline_link"
-            href="https://www.bbc.co.uk/programmes/b006pfp8"
-    >BBC News South East</a
-    > and <a
-            class="inline_link"
-            href="https://www.bbc.co.uk/sounds/play/live:bbc_radio_one"
-    >BBC Radio 1</a
-    > with consultation about the various applications of generative AI.</p>
-    <br>
+<div id="about" class="content fade">
 
-    <h2>Performance</h2>
-
-    <figure class="outer-img-container">
-      <img src="/Images/(1)%20Anchorage%20-%20The%20Mooring%20-%20August%202022.jpeg" alt="">
-      <div>
+  <section class="content-section">
+    <h1 class="hidden-up" style="color: var(--color-purple-dark); margin-bottom: 4rem;">About</h1>
+    <h2 class="hidden-up">Comedy & Performance</h2>
+    <div class="main-text-container">
+      <figure class="outer-img-container hidden-up delay-1">
+        <img src="/Images/(1)%20Anchorage%20-%20The%20Mooring%20-%20August%202022.jpeg" alt="Anchorage Spoken Word" loading="lazy">
         <figcaption>Anchorage Spoken-Word Poetry Night</figcaption>
-      </div>
+      </figure>
 
-    </figure>
+      <p class="hidden-up delay-2">
+        I have carved a distinctive niche in the comedy circuit by blending technology with the performing arts. My style focuses on character comedy and the "PowerPoint Comedian" aesthetic, often utilizing my own creative code to enhance stage presentations.
+      </p>
 
-    <p class="text-left">
-      I've tipped my hat into many different types of popular performance, through the art of public speaking, stand-up comedy and spoken-word poetry. Within the domain of stand-up comedy, I've carved a distinctive niche with my love of character comedy and creative use of PowerPoint presentations. This approach adds a dynamic and educational twist to my comedy, delighting audiences with both humour and insightful visuals.
-    </p>
-
-    <figure class="outer-img-container">
-      <img src="/Images/(2)%20Stand-Up%20on%20the%20Stour.png" alt="">
-      <div>
+      <figure class="outer-img-container hidden-up delay-1">
+        <img src="/Images/(2)%20Stand-Up%20on%20the%20Stour.png" alt="Stand Up on the Stour" loading="lazy">
         <figcaption>Stand-Up on the Stour - 1 Year Anniversary</figcaption>
+      </figure>
+
+      <p class="hidden-up delay-2">
+        My human + AI show, <em>The Comedy Singularity</em>, challenges audiences to reconsider the relationship between human creativity and artificial intelligence. Whether through spoken-word poetry at events like Anchorage or live stand-up on the Stour, my goal is always to educate through entertainment.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-animated-purple content-section slant-top-bottom">
+    <h2 class="hidden-up" style="color: var(--color-yellow);">STEM Communication</h2>
+    <div class="main-text-container">
+      <p class="hidden-up delay-1">
+        Beyond the lab, I am a passionate educator and STEM communicator. Having achieved my PGCE and Qualified Teacher Status (QTS) in 2025, I am dedicated to making Computer Science and Mathematics accessible and exciting for secondary and sixth-form students. 
+      </p>
+      <p class="hidden-up delay-2">
+        My mission is to bridge the gap between abstract computing concepts and real-world application. Through my work as a "Canvassador" (Canva for Education Ambassador), I actively develop gamified learning resources to transform the classroom experience into an interactive journey.
+      </p>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 3rem;">
+        <img src="/Slideshow Images/Events Gallery Images/BarCamp - The CompSci Experiment.png" alt="BarCamp Experiment" loading="lazy" style="width: 30%; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+        <img src="/Slideshow Images/Upload June 2025/CC Talk copy/Picture.png" alt="Comedy Singularity Talk" loading="lazy" style="width: 30%; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+        <img src="/Slideshow Images/Events Gallery Images/Pint of Science Festival_2.jpg" alt="Pint of Science" loading="lazy" style="width: 30%; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
       </div>
+    </div>
+  </section>
 
-    </figure>
+  
+  <section class="content-section">
+    
+    
+    <h2 class="hidden-up">Academic Research</h2>
+    <div class="main-text-container hidden-up delay-1">
+      <p>
+        Currently, I am an MSc by Research student at the <a class="inline_link" href="https://www.kent.ac.uk/">University of Kent</a>. My research lies at the intersection of Computational Creativity and Humour, specifically investigating the capabilities of Large Language Models (LLMs) such as <a class="inline_link" href="https://www.anthropic.com/news/claude-3-5-sonnet">Claude 3</a>, <a class="inline_link" href="https://blog.google/technology/ai/google-gemini-ai/">Google Gemini</a>, and <a class="inline_link" href="https://openai.com/research/gpt-4">GPT-4</a> to generate stand-up comedy material. I explore whether iterative prompt-chaining and computational theory can capture the nuances of comedic timing and structure.
+      </p>
+    </div>
 
-    <p class="text-left">
-      This unique comedic style and commitment to entertainment while educating sets me apart as a multifaceted performer and academic, making me stand-out across both worlds.
+
+    <h3 class="hidden-up" style="color: var(--color-purple-dark); margin-bottom: 1rem; font-size: 1.8rem;">MScRes Thesis: Exploring AI and Comedy</h3>
+
+<div class="main-text-container hidden-up delay-2" style="
+    margin-top: 3rem; 
+    padding: 2.5rem; 
+    border-radius: 24px; 
+    background: rgba(255, 255, 255, 0.6); 
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px); 
+    border: 1px solid rgba(255, 255, 255, 0.4); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+    
+    
+    
+    <p style="font-size: 1.2rem; font-style: italic; color: #333; margin-bottom: 1.5rem; border-left: 4px solid var(--color-yellow); padding-left: 1rem;">
+        "Stand-Up and Deliver: Modelling stand-up comedy to assess the self-improvement abilities of large language models"
     </p>
-
-
-    <br>
-    <br>
-  </div>
-
+    
+    <p style="font-size: 1.1rem; line-height: 1.7; color: #444;">
+        My thesis explores the theoretical and practical frameworks for computational humour. I investigate how iterative prompt-chaining can be leveraged to develop original stand-up comedy material, bridging the gap between human comedic theory and AI generation.
+    </p>
+    
+    <div style="margin-top: 2rem; display: flex; gap: 1rem; align-items: center; flex-direction: row; white-space: nowrap;">
+    <a class="thesis-btn thesis-btn-purple" href="https://kar.kent.ac.uk/115556/" target="_blank" style="flex-shrink: 0;">
+        Read the Thesis via the Kent Academic Repository
+    </a>
+    
+    <span style="color: #999;">|</span>
+    
+    <a class="thesis-btn thesis-btn-yellow" href="https://standupanddeliverthesis.notion.site/" target="_blank" style="flex-shrink: 0;">
+        Explore the data and results.
+    </a>
 </div>
+</div>
+
+<section class="content-section" style="padding-top: 2rem;">
+    <h3 class="hidden-up" style="color: var(--color-purple-dark); margin-bottom: 1rem; font-size: 1.8rem;">Teacher Training w/ Teach First</h3>
+    
+    <div class="main-text-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+        
+        <div class="hidden-up delay-1" style="padding: 2rem; border-radius: 20px; background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.4);">
+            <h3 style="color: var(--color-purple-dark); margin-bottom: 0.5rem;">PGCE Research: Effective Computing Teaching</h3>
+            <p style="color: #444; margin-bottom: 1.5rem;">
+                My M1 PGCE essay, <em>"What makes an effective teacher of Computing?"</em>, explores syntax misconceptions in Python and the pedagogical power of modelling and pair programming[cite: 4].
+            </p>
+            <button class="thesis-btn thesis-btn-purple" onclick="updateURL('pgce-essay')">
+                <i></i> View PGCE Essay
+            </button>
+        </div>
+
+        <div class="hidden-up delay-2" style="padding: 2rem; border-radius: 20px; background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.4); display: flex; flex-direction: column;">
+            <h3 style="color: var(--color-purple-dark); margin-bottom: 0.5rem;">Ambassador Project</h3>
+            <p style="color: #444; margin-bottom: 1.5rem; flex-grow: 1;">
+                This data-tracking and modelling project focused on optimizing feedback loops and diagnostic assessment, aligning with ECT Standards and whole-school strategic priorities.
+            </p>
+
+            <button class="thesis-btn thesis-btn-yellow" onclick="updateURL('ambassador-project')" style="color: var(--color-black); border: none; cursor: pointer;">
+                <i></i> View Ambassador Project Poster
+            </button>
+        </div>
+        
+    </div>
+
+    
+</section>
+  </section>
+
+  
+
+
+  <section class="bg-animated-purple content-section tuck-under">
+    <h2 class="hidden-up" style="color: var(--color-yellow);">Media & Press</h2>
+    <div class="main-text-container hidden-up delay-1">
+      <p>
+        My work in AI research has provided the opportunity to consult on public engagement forums. I have contributed insights regarding the future of generative AI to:
+      </p>
+      <ul style="text-align: left; font-size: 1.2rem; line-height: 2; margin-bottom: 3rem;">
+        <li><a class="inline_link" href="https://www.bbc.co.uk/programmes/b006pfp8">BBC News South East</a></li>
+        <li><a class="inline_link" href="https://www.bbc.co.uk/sounds/play/live:bbc_radio_one">BBC Radio 1</a></li>
+      </ul>
+      
+      <p>
+        I am available for media consultations, guest lectures, and event speaking engagements that explore the intersection of AI, humor, and digital education.
+      </p>
+    </div>
+  </section>
+</div>
+
+
+
+<div id="pgce-essay" class="content fade">
+
+  <section class="content-section" style="width: 100%; display: flex; justify-content: flex-start;">
+    
+
+    <div class="essay-viewer-container" style="
+        max-width: 900px; 
+        margin-left: 10%; /* Matches your other sections' indentation */
+        padding: 3rem; 
+        background: rgba(255, 255, 255, 0.6); 
+        backdrop-filter: blur(16px); 
+        border: 1px solid rgba(255, 255, 255, 0.4); 
+        border-radius: 24px; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+        text-align: left;">
+        
+        <h1 style="color: var(--color-purple-dark); text-align: left;">PGCE M1 Essay</h1>
+        <p style="font-size: 1.2rem; font-style: italic; color: #444; margin-bottom: 2rem; text-align: left;">"What makes an effective teacher of Computing?"</p>
+        
+        <nav class="essay-toc" style="
+            margin-left: 0;
+            margin-right: auto;
+            margin-bottom: 3rem; 
+            padding: 1.5rem; 
+            border-left: 4px solid var(--color-yellow); 
+            background: rgba(107, 33, 168, 0.05); 
+            border-radius: 0 12px 12px 0; 
+            text-align: left ;">
+            
+            <ul style="list-style: none; padding-left: 0; margin: 0; text-align: left;">
+                <li style="margin: 8px 0; text-align: left;">
+                    <a href="#intro" style="color: var(--color-purple); font-weight: 600; text-decoration: none; display: block;">Introduction</a>
+                </li>
+                <li style="margin: 8px 0; text-align: left;">
+                    <a href="#lit-review" style="color: var(--color-purple); font-weight: 600; text-decoration: none; display: block;">Literature Review</a>
+                </li>
+                <li style="margin: 8px 0; text-align: left;">
+                    <a href="#application" style="color: var(--color-purple); font-weight: 600; text-decoration: none; display: block;">Application of Research to Teaching</a>
+                </li>
+                <li style="margin: 8px 0; text-align: left;">
+                    <a href="#methodology" style="color: var(--color-purple); font-weight: 600; text-decoration: none; display: block;">Methodology</a>
+                </li>
+                <li style="margin: 8px 0; text-align: left;">
+                    <a href="#evaluation" style="color: var(--color-purple); font-weight: 600; text-decoration: none; display: block;">Critical Evaluation</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="essay-content" style="color: #444; line-height: 1.8; font-size: 1.15rem; text-align: left;">
+            <h2 id="intro">1. Introduction</h2>
+    <p>For learners in Key Stage 3, many of them are encountering high-level programming languages
+(such as Python) for the first time. It is important that your disciplinary knowledge is built on
+strong foundations, to then begin exploring higher-level concepts, such as abstraction, algorithms,
+and data modeling, as you move into Key Stage 4 and beyond. The challenge faced is that
+programming is particularly prone to misconceptions, due to the new skills required of logical
+reasoning, syntactical accuracy, and abstract thinking. These misconceptions can often go
+unnoticed during KS3 and pose challenges for teaching programming at higher levels of education.
+These misconceptions range from one pupil to another. It could be ‘confusing assignment and
+equality’ (= or ==), ‘misunderstanding the use of colons and indentation’, or ‘struggling to follow
+the logical process of how to solve a problem’. These misconceptions are not simply gaps in
+knowledge but alternative models that pupils build when grappling with new content.<br> <br>
+Effective teaching of computing must establish this disciplinary knowledge, but also anticipate and
+address these misconceptions in order to lead to a deep conceptual understanding. The National
+Centre for Computing Education emphasises the importance of structuring learning around key
+concepts and being aware of these common misconceptions to enhance pupil understanding.
+The misconception that I have chosen to tackle is around syntax errors in Python programming.
+After teaching a unit of Python programming earlier in the year, I observed the difficulties that
+KS3 pupils had when following the syntactical rules of a high-level programming languages like
+Python. I saw how I could plan these lessons around reinforcing these rules and addressing
+misconceptions to guide pupils towards a better understanding.<br> <br>
+Focusing on syntax misconceptions supports my own professional development as a computing
+teacher, by challenging me to develop greater pedagogical subject knowledge <span class="source">(Schulman, 1986)</span> by
+selecting pedagogical strategies that can make the abstract concepts more accessible to pupils.
+This aligns strongly with the Department of Educations Teachers’ Standards, especially ‘through
+the planning of well structured lessons tailored to the common learner needs <span class="source">(for Education, 2021)</span>.
+I value accessibility within Computing and believe that all pupils, regardless of prior exposure,
+should be able to create programs and solve problems confidently. This focus will make me more
+reflective about the assumptions that I hold, such as the idea that repeated coding practice alone
+is sufficient for pupils to understand syntax rules. These insights will shape the way I design
+lessons, and write activities, to create a safe classroom environment where misunderstandings are
+raised and discussed openly. In doing so, I am developing a more responsive and pupil-centred
+approach to teaching computing, and developing into a more effective teacher.<br> <br>
+Our curriculum already uses some techniques, such as starter and retrieval quizzes (‘Do Now’) to
+reinforce this syntactical knowledge, which supports long-term retention and provides low stakes
+opportunities to correct misunderstandings. However, applying more pedagogical approaches
+through this study with pupils in KS3 will put them in stronger and more confident position going
+into their GCSE qualification, providing more time to focusing on developing skills rather than
+reteaching core programming concepts.</p>
+
+    <h2 id="lit-review">2. Literature Review</h2>
+    <p>Programming errors pose significant challenges for beginner programmers. Syntax errors, mistakes
+in code structure, prevent programs from running, causing frustration among learners <span class="source">(Senecca,
+2025)</span>. Python is the predominant language in programming education at KS3 and KS4 <span class="source">(King’s,
+2024)</span> and this essay examines the misconceptions surrounding syntax rules in Python and explores
+pedagogical techniques to address these misconceptions.<br> <br>
+The prevalence of syntax errors among beginner programmers can be attributed to a combination
+of cognitive overload and the abstract nature of programming syntax, contrasting with natural
+language constructs <span class="source">(Sweller, 1988)</span>. Cognitive load theory suggests that learners have limited
+working memory capacity. When faced with complex programming tasks, learners may become
+overloaded, making them more prone to overlooking syntactical details, like correct punctuation or
+the precise order of operations. This overload can manifest as syntax errors, These errors are not
+always because the learner doesn’t understand the rules, but because their cognitive resources are
+stretched thin. This highlights the need for pedagogical techniques to tackle these misconceptions.</p>
+
+    <h3 id="syntax-errors">2.1 Syntax Errors</h3>
+    <p>Understanding and correcting syntax errors is a major hurdle for novice programmers, especially at
+the KS3 level where learners are often encountering text-based languages for the first time.
+Research shows that syntax errors are among the most frequent and frustrating issues that
+beginner programmers face <span class="source">(Robins et al., 2003)</span>. These errors can include incorrect indentation,
+missing colons, or inconsistent use of capitalisation. Errors like this can hinder a learner’s sense of
+progress and cause them to disengage, if the errors are not addressed effectively through
+instruction and support. <br> <br>
+One of the reasons that syntax errors are so persistent is because beginner programmers lack a
+mental model of how a programming language is structured. This parallels the way that pupils
+struggle picking up English and spelling when they first start in Primary school. <span class="source">Du Boulay, 1986</span>
+argues that novice learners must develop both “notational machines” (a conceptual model of how
+the code executes) and syntactical fluency in order to write functional programs. Without this
+foundational understanding, learners often resort to guesswork, building their own model about
+how it work, which can lead to embedded misconceptions. <span class="source">Sentance and Csizmadia, 2016</span> extend
+this idea, arguing that introducing syntax in visually scaffolded contexts can help reduce barriers.
+This could be using block-based environments such as Scratch that abstracts away some of the
+syntax concerns for beginner programmers. <br> <br>
+Grover and Basu <span class="source">(Grover and Basu, 2017)</span> advocate for the use of pedagogical strategies such as
+live modelling and pair programming to support syntax development. Modelling allows teachers to
+explicitly show not only the “what” by the “why” behind correct syntax, whilst pair programming
+encourages learners to verbalise and reflect on their understanding with their peers. These
+pedagogical approaches are especially effective when combined with real-time teacher feedback, as
+they help pupils internalise syntax patterns and learn from their mistakes collaboratively.
+I have looked at these two commonly used pedagogical techniques, Paired Programming and
+Modelling. These techniques are evidenced by well-known institutions <span class="source">(“Engaging learners
+through pair programming - Teach Computing”, 2025) (“Modelling the programming process
+4 through live coding - Teach Computing”, 2025)</span>.</p>
+
+    <h3 id="paired-programming">2.2 Paired Programming</h3>
+    <p>Paired programming offers a structured approach to collaborative learning, aiming to mitigate
+the cognitive overload often experienced by novice programmers who encounter complex syntax.
+By assigning distinct roles, the “driver” who writes the code and the “navigator” who reviews and
+guides, the task is broken down. This division of the task allows the learners to focus on one task,
+reducing the mental effort required to simultaneously manage syntax, logic, and problem solving.
+This “collective working memory effect” <span class="source">(NCCE, 2021)</span> can be particularly beneficial when tackling
+syntax errors, as the navigator can provide immediate feedback and catch errors. <br> <br>
+Constructivist learning theory, as proposed by Vygotsky <span class="source">(Vygotsky, 1978)</span>, suggests that learners
+actively construct understanding through social interaction. Paired programming aligns with this
+by providing structured opportunities for dialogue, feedback, and collaborative problem solving. It
+supports Vygotsky’s Zone of Proximal Development (ZPD), where learners develop skills through
+guidance and support from peers. <br> <br>
+<span class="source">McDowell et al., 2002</span> reported a 15% increase in post-test performance in undergraduate
+computer science students using paired programming. Similarly, <span class="source">Williams and Kessler, 2000</span> found
+that code produced in pairs had fewer logical and syntactical errors and was completed more
+quickly. Although these studies focus primarily on higher education, recent research by Sentance
+et al., 2019 within UK secondary schools has shown that pupils engaged in pair programming
+showed improved engagement and understanding of programming constructs, particularly with
+younger learners aged 11–14. <br> <br>
+There are a number of challenges that are faced by an educator in executing an effective paired
+programming activity <span class="source">(Techiebytess, 2024)</span>. Poor communication between partners can eliminate
+the benefits of the ‘collective working memory effect’. Miscommunications can increase the number
+of code faults and syntactical mistakes, rather than reducing them. The other complication is
+navigating the skill disparity that exists within a class. Lower attainment pupils may over-rely on
+higher attaining pupils. Some pupils may feel “overshadowed or left behind” which is why pupils
+should be paired up in a considered way. <br> <br>
+Additionally, some students may thrive in more independent learning environments. Reflective
+learners, for example, might prefer to work through coding problems at their own pace and engage
+in self-directed debugging, rather than collaborating in real-time. It is important to consider the
+individual needs of each class and how they learn best. <br> <br>
+Moreover, many studies on paired programming rely on self-reported data, such as perceived
+confidence and frustration levels. These subjective metrics can be influenced by social desirability
+bias, where students present positive feedback to please teachers or researchers. More objective
+data, such as the number and type of syntax errors in submitted code, time taken to complete
+tasks, or improvements over time, can provide a clearer picture of its effectiveness <span class="source">(Umapathy and
+Ritzhaupt, 2017)</span>. <br> <br>
+In summary, paired programming, when implemented thoughtfully, offers significant promise in
+helping KS3 pupils develop syntactical accuracy and confidence. However, its success depends on
+5 carefully designed activities, strategic pairing, and a classroom culture that supports both
+collaboration and individual reflection. These considerations will become important when I try to
+implement it myself in my own classroom.</p>
+
+    <h3 id="modelling">2.3 Modelling</h3>
+    <p>It is important to consider the role of the teacher in supporting novice programmers. Modelling
+is an increasingly recognised pedagogical strategy in computing education, particularly when
+support practical tasks with pupils at Key Stage 3. By making expert thinking visible, modelling
+helps pupils understand both the structure and reasoning behind the code they are writing,
+addressing the challenge of learning new syntax and syntax languages. <br> <br>
+When implemented effectively, modelling can be a teacher led approach that involves
+demonstrating coding practices and includes the identification and correction of syntax errors in
+real time. A teacher may employ a number of techniques to emulate syntax errors, such as
+intentionally making mistakes to prompt pupils with. This is a supported technique across the
+literature. In this paper, academics at the University of Sussex, identify the importance of using
+modelling (via worked examples) as a technique to teach programming <span class="source">(Soraya et al., 2010)</span>.
+Teachers modelling code in real time can expose pupils to authentic debugging practices and
+encourage a growth mindset around error correction. This is especially relevant when discussing
+KS3 pupils, who are encountering Python and the syntax of text-based programming for the first
+time. Studies show that they will benefit from the explicit instruction and interrogation aspects of
+modelling programming. <br> <br>
+This community thread discusses the application of modelling syntax errors “in particular, show
+them what happens when you make a syntax error” <span class="source">(Various., n.d.)</span>. While the online community
+thread offers anecdotal insights into the use of modelling syntax errors, it lacks the rigour of
+peer-reviewed research. The advice is based on individual experiences and may not be applicable
+to all learners or contexts. <br> <br>
+Modelling also helps to overcome the “syntax barrier” described by <span class="source">Robins et al., 2003</span>, whereby
+learners became fixated on avoiding errors rather than understanding the underlying concepts.
+When teachers model how to respond to errors, it can shift pupil’s perspective of mistakes and lead
+to a positive classroom culture where errors can be discussed openly. <br> <br>
+Modelling support the cognitive apprenticeship theory, in which learners acquire new skills through
+guided experience <span class="source">(Collins et al., 1988)</span>. In Computing, this involves the teacher acting as an
+expert programmer, demonstrating problem-solving processes and gradually releasing
+responsibility to learners. For KS3 pupils, this structured support can be particularly helpful when
+introducing unfamiliar syntax, such as indentation, use of colons, or variable naming conventions. <br> <br>
+Overall, the literature supports modelling as a high-impact strategy for programming instruction.
+It helps understand code, builds confidence, and enables learners to internalise good habits,
+providing a foundation for more independent and error-resilient programming in future stages of
+learning.</p>
+<h3 id="Summary">2.4 Summary</h3>
+    <p>A review of the literature highlights that beginner programmers frequently struggle with syntax
+errors, particularly issues like incorrect indentation, case sensitivity, and punctuation. These errors
+can significantly hinder learners’ progress and confidence. Research also emphasises the
+importance of explicitly modelling programming processes, which helps to demystify code structure
+and reduce misconceptions. Modelling supports cognitive load reduction by making abstract
+concepts concrete and giving learners the chance to observe and understand expert thinking . In
+parallel, paired programming is shown to encourage collaboration and engagement, reducing
+cognitive load through the “collective working memory effect” and improving accuracy through
+peer support <span class="source">(McDowell et al., 2002)</span>. While each strategy presents implementation challenges,
+such as communication issues or learner preferences for independent work, the consensus across the
+literature supports their use to enhance novice programmers’ fluency and confidence. These
+insights directly informed the pedagogical choices in my intervention, shaping the design of a KS3
+unit intended to address syntax misconceptions in a practical and engaging way.</p>
+
+    <h2 id="application">3. Application of Research to Teaching</h2>
+    <p>In addressing syntax misconceptions, I have drawn upon my two research informed strategies of
+modelling and paired programming to enhance pupil understanding and engagement. The unit
+of work was structured around Python Turtle, providing a visually engaging and purposeful context
+for programming. Creating geometric shapes (such as rectangles, diamonds and circles) offered a
+clear and predictable program flow. <br> <br>
+
+<em><b>Creating a rectangle</b>
+Draw a line down
+Turn left
+Draw a line across
+Turn left
+Draw a line up
+Turn left
+Draw a line across</em>
+<br> <br>
+Pupils could follow the steps in the program by drawing the shape themselves on paper,
+reducing the level of abstraction needed for the activities. This helped to make the abstract syntax
+of Python more concrete, reducing the Cognitive load and supporting the development of
+procedural understanding, a key concept for beginner programmers <span class="source">(Sweller et al., 2011)</span>.
+To deliver this unit, I used Trinket.io, a browser-based coding platform that includes both a
+text-based Python mode and a block-based mode. This choice as significant, as it enabled me to
+bridge pupils’ prior experiences with block-based programming tools (such as Scratch) with the
+new challenges of writing in a text-based language. This aligns with research by <span class="source">Grover and Basu,
+2017</span>, who argue that transitioning from block-based to text-based programming requires
+scaffolded support and a meaningful progression model. Many of the core concepts (such as loops,
+and variables) could be demonstrated and experienced in the block-based environment. When
+pupils feel confident with these concepts, the lesson would switch to a text-based environment and the focus can shift to the syntax misconceptions. <br> <br>
+Modelling would play a crucial role throughout the unit within the teaching episodes. I employed
+the principles of cognitive apprenticeship <span class="source">(Collins et al., 1988)</span> by verbalising the reasoning behind
+each line of code, allowing pupils to see how programmers approach debugging and syntax
+correction in real time. Intention mistakes can be employed to pose questions to pupils for
+real-time formative assessment and checking the current status of the misconceptions. <br> <br>
+In the independent activities, Pair Programming would be applied to support collaborative
+learning during the activities held in the text-based environment of Trinket. Pupils would be
+paired up using a pre-defined seating plan based on their confidence level. One pupil would act at
+the “driver” and one pupil would act as the “navigator” and they would write and review code
+together. Supported by the research, this method helps to build confidence in programming
+amongst pupils, and encourages pupils to identify syntax mistakes themselves leading to that
+deeper understanding. <br> <br>
+<b>The Lessons</b> <br> <br>
+A six-lesson unit was designed to progressively build the pupil’s understanding of programming
+concepts, whilst addressing misconceptions and reducing the cognitive load demands typically
+associated with syntax learning. The lesson sequence was informed by the Cognitive Load Theory
+<span class="source">(McDowell et al., 2006)</span> and the principles of scaffolded learning. There would be periods of
+self-reflection throughout the six lessons, which would act as formative assessment to form the
+pairings during the paired programming activities. If successful, this unit would lead to pupils
+feeling confident and fluent in their block-based and text-based programming. <br> <br>
+The first lesson reintroduced pupils to block-based programming, providing a low-threshold entry
+point for starting the topic. It built on pupils prior experience with Scratch in Year 7 and primary
+school. This lesson focused on the concept of ‘sequencing’ showing pupils how to order instructions
+to build simple shapes, such as rectangles, diamonds, and triangles. In lesson two, more key
+programming concepts were introduced inside of the block-based environment, such as ‘iteration’
+and ‘variables’. These lessons embedded these concepts and encouraged computational thinking,
+but in a familiar programming environment and with tasks that they could visualise clearly. <br> <br>
+Modelling was used throughout showing pupils how to create a simple shape (rectangle) by
+dragging and dropping blocks together in the right order. Cold calling was introduced alongside
+the demonstrations, to identify any new or prior misconceptions before moving on.
+In lesson three, the same programming challenges were re-contextualised using a text-based
+programming environment, using Python Turtle. The shift was carefully planned with
+deconstructed comparisons showing the action, the block-based version and the text-based version.
+This helped to bridge the gap between the tasks set in the block-based environment to the new
+text-based language. Keeping the tasks similar helped pupils to focus on re-applying the skills in a
+different concept, rather than feeling overwhelmed and unsure. <span class="source">Grover and Basu, (2017)</span> emphasise
+the importance of this type or transitional scaffolding to ease the jump from block to text-based
+programming. <br> <br>
+Through the teaching episodes centred around modelling the new language, syntax errors could be
+shown and discussed through class discussion. This first lesson focused on the common mistakes such as capitalisation, incorrect indentation and misuse of brackets. During the independent activity, I could circulate and spot these errors when they occurred and challenge pupils to explain
+what the mistake was and how they would fix it, on a 1 to 1 basis. <br> <br>
+Lesson four and five were dedicated to pair programming, encouraging pupils to support each
+other in using correct syntax. The apply tasks were more complex in nature, asking pupils to now
+combine shapes together to create a larger design. These activities gave pupils the ability to
+verbalise their thinking and collaboratively resolve errors. Through this verbalisation, I could also
+easily identify errors and misconceptions based on what the pupils were saying. Drawing from
+research on collaborative learning <span class="source">(Vygotsky, 1978; McDowell et al., 2006)</span>, this approach provided
+both cognitive and emotional support, and the informal feedback from their partner, increased
+their confidence and accuracy in syntax by the end of the lesson. <br> <br>
+Lesson six brought everything together into a fun activity that I could go around and assess.
+Pupils applied their skills independently to design a number of national flags using Python Turtle.
+I used modelling to show them how to create an easier flag and then encouraged them to try more
+complicated flags. This open-ended task allowed me to see all the skills covered, such as
+‘sequencing’, and ‘iteration’ and the success of the design wound indicate that there were no
+syntax errors in their code.</p>
+
+    <h2 id="methodology">4. Methodology</h2>
+    <p>To evaluate the effectiveness of my project in addressing syntax misconceptions in Python at KS3,
+I adopted a practitioner inquiry approach, supported by structured self-reflection and formative
+assessment data. Being a reflective teacher, gives us the opportunity to improve practice through
+self-awareness, respond to our pupils needs and bridge the gap between theory and practice. My
+project is supported by literature, and clearly through out but the reflection gives me a chance to
+reflect on the successes and identify improvements that need to be made. I sought a reflective
+framework that supports continuous learning and improvement within the classroom, rather than
+one reliant on formal assessment, such as marked pupil work. <br> <br>
+The reflective model chosen for this inquiry is <span class="source">Gibbs’ Reflective Cycle (1988)</span>, which offers a
+structured yet flexible approach to post-lesson reflection. Gibbs’ reflective model is particularly
+well-suited as it encourages cyclical thinking through six key stages: Description, Feelings,
+Evaluation, Analysis, Conclusion and Action Plan. This framework promotes deep
+engagement with my teaching practice, encouraging critical reflection on both emotional and
+pedagogical dimensions of a lesson. The emotional side is especially important for my reflections,
+as I complete lessons with a resounding emotional response about how successful I feel the lesson
+was or how well the pupils responded to the material. <br> <br>
+One of the key strengths of Gibbs’ model is that it supports reflective practice even without formal
+graded work, as it focuses on the teachers’ lived experience, pupil responses and observed learning
+behaviours (Finlay, 2008). This made it particularly appropriate within the context of my lessons,
+where I had access to to formative assessment data rather than a summative, marked portfolio of
+evidence. <br> <br>
+Following each lesson in the unit, I engaged in a structured reflection using Gibbs’ six stages. I documented what occurred during the lesson (Description), how I felt it went (Feelings), and my initial judgements about its success (Evaluation). I looked at why certain misconceptions persisted
+or were resolved, using evidence from classroom dialogue, coding outputs, and the types of syntax
+errors pupils made (Analysis). This led me to identify key learning points and decide on next steps
+for future lessons (Action Plan). This iterative process mirrors <span class="source">Sch¨on, 1983</span> concept of the
+“reflective practitioner”, where teaching in continually refined in response to the in-classroom
+experience. <br> <br>
+I did collect some qualitative and quantitive data from several sources to support my reflections. 
+<ul>
+    <li>R-A-G Self-Assessment data from pupils was gathered at the mid-point (before starting
+the text-based programming) and the end of the unit. Pupils assessed their confidence against
+key learning points from the topic. This allowed me to track changes in pupil’s confidence over
+the course of the unit. </li>
+<li>Attainment grades using the schools levelling system. This offered a summative assessment
+of the pupils proficiency in the topic, but was based on a marking band rather than a score. For
+example, 0 would be “Does not apply themselves in the lesson, and have shown no development
+of skills” whereas 5 would “Applies themselves to all tasks to completion and in most cases
+goes beyond what is expected”.</li>
+<li>Lesson observations and feedback from mentors and visiting staff provides an external
+insight into the classroom climate, engagement and effectiveness. These qualitative comments
+support my own reflections over the course of this unit.</li> <br> <br>
+Together this data will provide a number of different perspectives about the effectiveness of this
+project. These approaches align with the action research ethos, where the teacher is both practitioner
+and researcher, engaging in reflection for their own professional development (McNiff and Whitehead,
+2006). It also supports the development of reflective capacity, an essential characteristic of effective
+computing teachers.</p>
+
+    <h2 id="evaluation">5. Critical Evaluation</h2>
+    
+    <h3 id="results">5.1 Results</h3>
+    <p>This section presents key findings that were gathered through reflective journaling using <span class="source">Gibbs’
+Reflective Cycle (1988)</span>, pupil self-assessment (RAG ratings), attainment grades, and feedback
+from lesson observations. The Data was collected across a six-lesson unit designed to address
+misconceptions in Python Syntax using strategies, such as pair programming and modelling.
+One of the most notable trends in the data was the increase in pupil confidence and attainment
+after working in pairs on Python programming tasks. This mirrors the work of McDowell et al.,
+2006 who found that pair programming not only improves program correctness but also enhances
+pupil retention and self-efficacy. In my own classroom, this was reflected in the R-A-G data: at the
+midpoint of the unit only 29% of pupils self-assessed as “green” for ‘I can use iteration to make my
+programs simpler’; by the end of the unit, this had increased to 59% and the remaining 18%
+assessed themselves as “Amber”. (The remaining percentage was pupils who were absent on the
+final lesson). <br> <br>
+The use of modelling as a teaching strategy proved highly effective in clarifying complex syntax
+rules, as can be seen throughout my reflections. Research by Collins et al., 1988 on cognitive
+apprenticeship emphasises the importance of modelling expert thinking. In my own practice, I
+modelled writing and debugging code with live narration, drawing attention to common mistakes
+such as forgetting colons after control statements or misalignment of indentation. This approach
+resonates with <span class="source">Rosenshine’s (2012)</span> principles of instruction, particularly “presenting new material
+in small steps” and “providing models”. <br> <br>
+Observation feedback supported the success of these lessons and pedagogical approaches. One
+observer noted: “The use of pair programming was an effective way to help students understand
+the concept being taught”. This supports the ore strategy of this project, showing that pair
+programming enabled pupils to engage in collaborative dialogue and troubleshoot syntax errors
+together. <br> <br>
+The observations highlighted the effective classroom management that went alongside the
+pedagogical approaches, with one observer saying “. . . actively circulated the room to check
+students’ progress and understanding, which is great. This shows the conscious effort I made to
+circulate a gather observable data to reflect upon after the lesson, as well as provide 1 to 1 support
+and monitor progress. <br> <br>
+Observation feedback indicated that pupils were more engaged during pair programming tasks,
+with one observer noting that “collaboration helped reduce syntax errors, especially for pupils who
+lacked confidence.” This aligns with the literature on the benefits of collaborative learning in
+computing. My own reflections supported this observation. In Lesson 4, I wrote that “these ‘active
+discussion’ aspects helped pupils connect with error messages and find faults within their own
+code,” highlighting the metacognitive benefits of having a partner to think aloud with. <br> <br>
+By Lesson 5, I had refined the structure of pair programming, implementing timed role switches
+and modelling of the driver/navigator roles, which I noted helped “ensure that pupils got started
+in their roles immediately.” This improved classroom management and ensured a more equal
+distribution of cognitive effort, helping to eliminate the “passivity” I had seen among weaker
+navigators in Lesson 4. These iterative improvements show how reflective practice helped me
+respond to barriers in real time. <br> <br>
+Similarly, my reflections revealed that by Lesson 3, I had adapted my modelling approach to
+scaffold syntax more clearly, based on observed pupil difficulties. I had initially felt “slightly
+anxious about introducing text-based syntax” but later noted how “pupils responded positively”
+and that modelling helped them “bridge the transition from blocks to code.” I recognised that
+“syntax issues did occur (e.g., incorrect indentation or forgotten colons), but pupils were
+increasingly able to debug these,” echoing the findings of <span class="source">Becker et al. (2016)</span>, who stressed the
+importance of teaching learners to make sense of error messages. <br> <br>
+By Lesson 6, this scaffolding had paid off. I observed that pupils “asked far fewer questions related
+to syntax” and that “debugging was mostly independent.” Pupils demonstrated improved fluency
+in the Python programming language, specifically in ‘sequencing’ and ‘iteration’, avoiding
+misconceptions like improper use of indentation and capitalisation errors.
+</p>
+    
+    <h3 id="discussion">5.2 Discussion</h3>
+    <p>My findings support Grover and Basu, 2017, who found that structured transitions from
+block-based to ext-based programming reduce learner anxiety and improve code accuracy.
+However, <span class="source">Grover and Basu, 2017</span> observed significant performance dips when moving between
+blocks and text which wasn’t observed in my own observations. The use of Trinket.io’s block &
+text features appeared to smooth the transition. Pupil comments throughout the lessons indicated
+that they used the toggle-feature to switch from seeing Python text to Python blocks, if they got
+stuck. This helped them understand the logic of the program and then apply that to their own
+work. This suggests that carefully chosen tools can actually have a mitigating impact on some of
+the conceptual barriers identified in the broader literature. <br> <br>
+The success of pair programming in reducing syntax errors echoes the work of McDowell et al.,
+2006, who showed improved performance and confidence among novice programmers. Pupils were
+similarly observed to engage more critically with their code when working collaboratively. Rather
+than relying solely on teacher intervention, pairs supported one another in identifying and
+correcting syntax errors, often talking through the logic of the code aloud. This aligns with
+Vygotsky’s theory of social constructivism, whereby knowledge is co-constructed through dialogue
+and interaction <span class="source">(Vygotsky, 1978)</span>. The driver-navigator roles in pair programming encourage these
+social aspect of developing programming skills, and peer feedback helps to reinforce correct syntax.
+Similar to the observations of <span class="source">Sentance and Csizmadia, 2016</span>, pupils in my study benefited from
+visual contexts (e.g. Python Turtle), which made abstract syntax rules more concrete. They
+argued that visualisation and context-rich tasks support students in understanding how individual
+lines of code relate to the program flow and structure. In my lessons, this was particularly evident
+using modelling to demonstrate drawing rectangles, other shapes or the flag task in the final
+lesson. This approach also helped to reduce cognitive load associated with interpreting
+programming syntax without context. <br> <br>
+I observed that case sensitivity errors these diminished rapidly once modelling and the pair
+programming pedagogues were introduced. In early lessons, I observed pupils writing ‘IF‘ rather
+than ‘if‘ or leaving a space before the brackets. However, by the end of the fourth lesson, these
+mistakes had reduced significantly. This improvement may be attributed to the consistent
+repetition of modelling examples, and the collaborative feedback aspect of pair programming.
+Some pupils in the class used these error messages as effective prompts to improve their code,
+particularly when paired up with a partner to discuss it with. As described in my reflective
+journal, this is due to the effectiveness of the modelling teaching episodes in lessons 1 - 3, that
+identified syntax mistakes and showed pupils how the errors occur and how to debug them.</p>
+    
+    <h3 id="implications">5.3 Implications</h3>
+    <p>These results suggest that future KS3 programming curriculum content should be carefully
+structured to include regular opportunities for both pair work and live teaching modelling. These
+strategies appear to be effective when introducing higher-level programming concepts, such as
+loops, or when pupils are confronted with new syntactical rules that differ from their prior
+experience in block-based languages. By embedding collaboration at key transition points in the
+learning cycle, practitioners can reduce cognitive overload and the likelihood of syntax errors, as
+learners are supported both by their peers and by teacher-led examples. <br> <br>
+
+Alongside this study, it has shown the effectiveness of using tools like Trinket.io to bridge the
+block-based content from KS2 into the text-based content of KS3. Trinket’s ability to integrate
+both block and text modes provides an ideal scaffolding tool for bridging the gap in learner
+understanding. For pupils unfamiliar with Python syntax, being able to preview the underlying
+code while manipulating blocks gives them a contextualised understanding of commands,
+formatting, and structure. This aligns with the research around dual coding theory <span class="source">(Paivio, 1991)</span>,
+which suggests that combining visual and textual representations can improve understanding and
+retention. The decision to use Trinket was also rooted in a desire to reduce barriers to entry for
+less confident learners, ensuring all pupils could begin writing meaningful code from the outset of
+the unit. <br> <br>
+Through the consistent application of <span class="source">Gibb’s Reflective Cycle (1988)</span>, I became a more responsive
+teacher, addressing misconceptions as they emerged, particularly by anticipating potential
+mistakes identified by others in the literature. This structured process enabled me to reflect
+systematically on each lesson, examining not only what went well, but also what could be
+improved, particularly in relation to persistent misconceptions. In doing so, I became more
+proactive in identifying potential misconceptions, such as indentation errors or misunderstanding
+the use of colons, before they occurred in the classroom. Drawing on insights from classroom
+observers and pupil R-A-G assessments, I was able to refine my explanations and adjust lesson
+pacing, which helped to better support pupils who were struggling. These reflections also
+encouraged me to test different styles of teaching, including more real-time coding examples and
+strategic use of questioning to assess understanding mid-lesson. <br> <br>
+My understanding of the connection between conceptual understanding and syntactical knowledge
+in programming has deepened significantly throughout this project. I now better appreciate how a
+pupil’s grasp of high-level constructs like iteration or sequencing is often undermined by their
+uncertainty over basic syntax. This reinforces the perspective articulated by <span class="source">Schulman, 1986</span>, who
+argues that effective teaching relies not only on knowing the subject matter, but also on
+understanding how best to convey it to learners. By integrating modelling, I was able to tailor my
+instruction to anticipate areas of confusion. This process has enhanced my pedagogical content
+knowledge (PCK), giving me a more nuanced understanding of how computing concepts should be
+sequenced, modelled, and assessed.</p>
+    
+    <h3 id="eval">5.4 Evaluation</h3>
+    <p>This project was successful in improving both pupil confidence and attainment in Python syntax.
+Data suggests that modelling and pair programming worked together to tackle common
+misconceptions and build confidence. <br> <br>
+
+<b>Limitations</b>
+This study was completed over a short time-scale (six lessons) and with one class. Broader
+conclusions about the success of these pedagogical approaches would require implementation across
+multiple classes, school contexts and over a longer timeframe.
+The self-assessment data collected by the pupils’ R-A-G ratings, while useful, may contain bias due
+to over (or underestimation) by pupils.
+<br> <br>
+<b>Future Work</b>
+Other strategies could be implemented alongside these to help further tackle syntactical mistakes.
+Using starter activities to focus on errors and how to solve them could reinforce pupils about how to
+approach an error in their syntax. The choice of IDE can also greatly help to tackle syntax by having
+auto-completion, syntax highlighting and syntax feedback. Some academics have suggested the
+implementation of auto-marking tools and code tracing exercises to further diagnose misconceptions
+that could be implemented on a future unit. <br> <br>
+<b>Conclusions</b> <br> <br>
+This reflective study has deepened my understanding of how to effectively teach programming to
+Key Stage 3 pupils transforming me into a more effective teacher of computing. I’ve done this by
+addressing common misconceptions around syntax rules. Through a structured six-lesson sequence
+grounded in research supported pedagogical approaches, I explored how modelling and paired
+programming can work together to support both conceptual and procedural knowledge.
+Beginning with block-based environments allowed pupils to follow modelled instructions and
+develop computational thinking skills without being hindered by the overall rules of syntax,
+aligning with cognitive load theory and a dual coding approach. As pupils transitioned to
+text-based programming, the live modelling and pair programming activities taught pupils how to
+write and debug code. My reflections from lesson 3 highlighted how “modelling helped bridge the
+transition from blocks to code” and this pedagogical approach created confidence in pupils for the
+longer activities at the end of the unit. <br> <br>
+The use of pair programming developed the pupil’s syntactical knowledge through deliberate
+practice, scaffolding and peer dialogue, I observed that “collaboration helped reduce syntax errors”
+and that pupils engaged in more purposeful discussions, while working together. This aligns with
+theory around the collective working memory effect and supports the constructivist approaches to
+learning, which stress the importance of interaction and co-construction of knowledge. By lesson 5,
+my implementation was more structured around role-switching to ensure balanced participation
+from all pupils. <br> <br>
+Throughout this unit, I applied Gibbs’ Reflective Cycle to refine my practice in real time. For
+example, after noticing in lesson 2 that verbalising programming concepts led to faster
+understanding, I created more opportunities for discussion in subsequent lessons. Similarly, after
+identifying unequal participation in lesson 4, I revised my pair programming routines in lesson 5 to
+ensure more equal engagement. These reflective adjustments, show how I transforming into a
+reflective and responsive teaching of computing, significantly improving the quality of learning and
+outcomes for my pupils. <br> <br>
+</p>
+
+<h3>Sources</h3>
+<p >
+  <ul style="background-color:rgb(244, 244, 244); border-radius: 5px; padding:20px; padding-left:40px; font-family:Georgia, 'Times New Roman', Times, serif; font-size: 16px;">
+
+
+<li>Collins, A., Brown, J. S., & Newman, S. E. (1988). Cognitive apprenticeship. Thinking: The Journal
+of Philosophy for Children, 8, 2–10. https://doi.org/10.5840/thinking19888129</li>
+<li>Du Boulay, B. (1986). Some difficulties of learning to program. Journal of Educational Computing
+Research, 2, 57–73. https://doi.org/10.2190/3lfx-9rrf-67t8-uvk9</li>
+<li>Engaging learners through pair programming - Teach Computing. (2025). https://teachcomputing.
+org/blog/engaging-learners-through-pari-programming</li>
+<li>Finlay, L. (2008, January). Reflecting on ’reflective practice’. Open Research Online. https://oro.
+open.ac.uk/68945/1/Finlay-%282008%29-Reflecting-on-reflective-practice-PBPL-paper-
+52.pdf</li>
+<li>for Education, D. (2021). Teachers’ standards. GOV.UK. https://assets.publishing.service.gov.uk/
+media/5a750668ed915d3c7d529cad/Teachers standard information.pdf</li>
+<li>Grover, S., & Basu, S. (2017). Measuring student learning in introductory block-based
+programming. Proceedings of the 2017 ACM SIGCSE Technical Symposium on Computer
+Science Education. https://doi.org/10.1145/3017680.3017723</li>
+<li>King’s. (2024). Programming education in England’s secondary schools. https://www.kcl.ac.uk/
+programming-education-in-englands-secondary-schools</li>
+<li>McDowell, C., Werner, L., Bullock, H., & Fernald, J. (2002). The effects of pair-programming on
+performance in an introductory programming course. Proceedings of the 33rd SIGCSE
+technical symposium on Computer science education - SIGCSE ’02.
+https://doi.org/10.1145/563340.563353</li>
+<li>McDowell, C., Werner, L., Bullock, H. E., & Fernald, J. (2006). Pair programming improves student
+retention, confidence, and program quality. Communications of the ACM, 49, 90–95. https:
+//doi.org/10.1145/1145287.1145293</li>
+<li>McNiff, J., & Whitehead, J. (2006). All you need to know about action research. Sage Publications.
+Modelling the programming process through live coding </li>
+<li>Paivio, A. (1991). Dual coding theory: Retrospect and current status. Canadian Journal of
+Psychology / Revue canadienne de psychologie, 45 (3), 255–287.
+https://doi.org/10.1037/h0084295</li>
+<li>Robins, A., Rountree, J., & Rountree, N. (2003). Learning and teaching programming: A review and
+discussion. Computer Science Education, 13, 137–172. https://doi.org/10.1076/csed.13.2.
+137.14200</li>
+<li>Sch¨on, D. A. (1983). The reflective practitioner. Routledge.
+<li>Schulman, L. S. (1986). Those who understand : Knowledge growth in teac</li>hing. Ceras, School of
+Education, Stanford University.</li>
+<li>Senecca. (2025). Syntax errors - computer science. https://senecalearning.com/en-GB/revision-
+notes / ks3 / computer - science / national - curriculum / 2 - 1 - 19 - syntax - errors (accessed:
+23.02.2025).</li>
+<li>Sentance, S., & Csizmadia, A. (2016). Computing in the curriculum: Challenges and strategies
+from a teacher’s perspective. Education and Information Technologies, 22, 469–495. https:
+//doi.org/10.1007/s10639-016-9482-0</li>
+<li>Sentance, S., Waite, J., & Kallia, M. (2019). Teaching computer programming with primm: A
+sociocultural perspective. Computer Science Education, 29, 136–176.
+https://doi.org/10.1080/08993408.2019.1608781</li>
+<li>Soraya, S., Rahman, A., & Du Boulay, B. (2010). Learning programming via worked-examples.
+Retrieved May 4, 2025, from https://users.sussex.ac.uk/∼bend/papers/ppig2010siti.pdf</li>
+<li>Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. Cognitive Science,
+12 (2), 257–285. https://doi.org/https://doi.org/10.1207/s15516709cog1202\ 4</li>
+<li>Sweller, J., Ayres, P., & Kalyuga, S. (2011). Cognitive load theory. Springer New York. https :
+//doi.org/10.1007/978-1-4419-8126-4</li>
+<li>Techiebytess. (2024, March). Overcoming Challenges In Pair Programming: A Comprehensive Guide
+raquo; Techiebytess.com. https://techiebytess.com/challenges-in-pair-programming</li>
+<li>Umapathy, K., & Ritzhaupt, A. D. (2017). A meta-analysis of pair-programming in computer
+programming courses. ACM Transactions on Computing Education, 17, 1–13.
+https://doi.org/10.1145/2996201</li>
+<li>Various. (n.d.). How to teach beginning students how to find and fix syntax errors?
+https://cseducators.stackexchange.com/questions/3485/how-to-teach-beginning-students-
+how-to-find-and-fix-syntax-errors</li>
+<li>Vygotsky, L. (1978). Mind in society. Psychological Medicine, 11.
+https://doi.org/10.1017/s0033291700041507</li>
+<li>Williams, L. A., & Kessler, R. R. (2000). All i really need to know about pair programming i learned
+in kindergarten.</li> </p>
+  </ul>
+
+        </div>
+
+        
+    </div>
+  </section>
+</div>
+
+
+<div id="ambassador-project" class="content fade">
+  <section class="content-section" style="width: 100%; display: flex; justify-content: flex-start;">
+    <div class="essay-viewer-container" style="
+        max-width: 900px; 
+        margin-left: 10%; 
+        padding: 3rem; 
+        background: rgba(255, 255, 255, 0.6); 
+        backdrop-filter: blur(16px); 
+        border: 1px solid rgba(255, 255, 255, 0.4); 
+        border-radius: 24px; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+        text-align: left;">
+        
+        <h1 style="color: var(--color-purple-dark);">Teach First Ambassador Project</h1>
+        <p><em>"A Journey in Data Modelling"</em></p>
+        
+        <div style="
+          margin: 2rem 0; 
+          padding: 2rem; 
+          background: rgba(255,255,255,0.3); 
+          border-radius: 12px; 
+          text-align: center; 
+          display: flex; 
+          justify-content: center; 
+          align-items: center; 
+          gap: 20px; 
+          flex-wrap: wrap;">
+          
+          <img src="/Academic Images/1.png" style="max-width: 48%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+          <img src="/Academic Images/2.png" style="max-width: 48%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+      </div>
+    </div>
+  </section>
+</div>
+
 
 <div id="events" class="content fade">
-  <h1>Events</h1>
-  <div class="main-text-container">
+  <section class="content-section">
+    <h1 class="hidden-up" style="color: var(--color-purple-dark); margin-bottom: 4rem;">Events</h1>
 
-    <h2>Comedy</h2>
+    <h2 class="hidden-up">Comedy</h2>
+    <div class="main-text-container hidden-up delay-1">
+      <p>I'm taking my human + AI comedy show on a tour of a few venues and Fringe festivals. Keep your eyes peeled for more locations and dates.</p>
+    </div>
 
-    <p class="text-left">
-    I'm taking my human + AI comedy show on a tour of a few venues and Fringe festivals. Keep you eyes peeled for more locations and dates.
-    </p>
     <div class="events-grid">
-    <div class="event-card">
-      <img class="event-image" src="/Events%20Images/Landscape%20-%20Comedy%20Singularity.png" alt="Comedy Singularity" />
-      <div class="event-content">
-        <div class="event-title">The Comedy Singularity</div>
-        <div class="event-description">As we approach the Technology Singularity, My fantastic AI co-host and I explore whether AI can be funny or not. This show will make you question what exactly it means to be a human or indeed to be an AI.</div>
-      </div>
-    </div>
-    </div>
-
-    <h2>STEM Communcation and Outreach</h2>
-  <p class="text-left">
-    I've carved out a unique niche in the world of STEM communication. Through my previous work at the University of Kent and the <a
-          class="inline_link"
-          href="https://www.stem.org.uk/stem-ambassadors"
-  >STEM Ambassadors scheme</a>, I've aimed to make scientific concepts engaging, inspiring and entertaining for a variety of audiences.
-  </p>
-  <p class="text-left">
-    In my rolodex of talks, expect to find a selection of lectures, talks, stand-up comedy shows and live events.
-  </p>
-  </div>
-
-  <div class="events-grid">
-
-    <div class="event-card">
-      <img class="event-image" src="/Slideshow Images/Events Gallery Images/Ridiculous Quirks 0.png" alt="Event 2" />
-      <div class="event-content">
-        <div class="event-title">The Ridiculous Quirks of a Mathematically Imagined World</div>
-        <div class="event-description">What is Mathematics? A boring school subject. A random selection of number laws... No!
-          <br> <br>
-          Mathematics is like poetry filled with ridiculous quirks and wild stories.
-          <br> <br>
-          Prepare to be bewildered or perhaps even learn something.</div>
-      </div>
-    </div>
-
-    <div class="event-card">
-      <img class="event-image" src="/Slideshow Images/Events Gallery Images/Pint of Science Festival_2.jpg" alt="Event 2" />
-      <div class="event-content">
-        <div class="event-title">Can AI Stand-Up?</div>
-        <div class="event-description">AI-generated content is taking over the creative world. But can large-language models replace stand-up comedians.
-          <br> <br>
-          Watch Tommy explore the process of generating stand-up comedy with AI and whether human comedians are outdated.</div>
-      </div>
-    </div>
-
-    <div class="event-card">
-      <img class="event-image" src="/Slideshow Images/Upload June 2025/CC Talk copy/Picture.png" alt="Event 2" />
-      <div class="event-content">
-        <div class="event-title">2035 and the Future of AI</div>
-        <div class="event-description">Everyone says that AI is going to destroy our future, but is that truly the case.
-          <br> <br>
-          Let Tommy guide you through the current state of what AI can do and present a more hopeful future about where it could be heading.</div>
-      </div>
-    </div>
-
-    <div class="event-card">
-      <img class="event-image" src="/Slideshow Images/Upload June 2025/CodeHarbour - Photos copy/CodeHarbour - AI Presentations Talk - 22nd Feb 2024.00_04_01_12.Still002.png" alt="Event 1" />
-      <div class="event-content">
-        <div class="event-title">Let's Change How We Make Presentations</div>
-        <div class="event-description">Making PowerPoint Presentations manually is so 2020. Let's explore how we can use AI to make our presentations for us.
-          <br> <br>
-          Tommy's code for combining LLM, Stable Diffusion and the Reveal.js Framework will change the way you make presentations.</div>
-      </div>
-    </div>
-
-    <div class="event-card">
-      <img class="event-image" src="/Events Images/CCTALK - 1.jpg" alt="Event 1" />
-      <div class="event-content">
-        <div class="event-title">Stand-Up and Deliver</div>
-        <div class="event-description">An in-depth look into stand-up comedy theory, measuring humour and creativity in computational systems and how to use iterative prompt-chaining to develop stand-up comedy material.
-
-          <br><br> Let Tommy guide you through an overview of his MSc-R thesis and the process of generating stand-up comedy material with AI.</div>
+      <div class="event-card hidden-up delay-2">
+        <img class="event-image" src="/Events%20Images/Landscape%20-%20Comedy%20Singularity.png" alt="Comedy Singularity" loading="lazy"/>
+        <div class="event-content">
+          <div class="event-title">The Comedy Singularity</div>
+          <div class="event-description">As we approach the Technology Singularity, My fantastic AI co-host and I explore whether AI can be funny or not. This show will make you question what exactly it means to be a human or indeed to be an AI.</div>
         </div>
       </div>
     </div>
+  </section>
 
+  <section class="bg-animated-purple content-section slant-top-bottom">
+    <h2 class="hidden-up" style="color: var(--color-yellow);">STEM Communication</h2>
+    
+    <div class="main-text-container hidden-up delay-1">
+      <p>
+        I've carved out a unique niche in the world of STEM communication. Through my previous work at the University of Kent and the <a class="inline_link" href="https://www.stem.org.uk/stem-ambassadors">STEM Ambassadors scheme</a>, I've aimed to make scientific concepts engaging, inspiring and entertaining for a variety of audiences.
+      </p>
+      <p>
+        In my rolodex of talks, expect to find a selection of lectures, talks, stand-up comedy shows and live events.
+      </p>
+    </div>
 
-  </div>
+    <div class="events-grid">
+      <div class="event-card hidden-up delay-1">
+        <img class="event-image" src="/Slideshow Images/Events Gallery Images/Ridiculous Quirks 0.png" alt="Event 2" />
+        <div class="event-content">
+          <div class="event-title">The Ridiculous Quirks of a Mathematically Imagined World</div>
+          <div class="event-description">Mathematics is like poetry filled with ridiculous quirks and wild stories. Prepare to be bewildered or perhaps even learn something.</div>
+        </div>
+      </div>
 
+      <div class="event-card hidden-up delay-2">
+        <img class="event-image" src="/Slideshow Images/Events Gallery Images/Pint of Science Festival_2.jpg" alt="Event 2" loading="lazy"/>
+        <div class="event-content">
+          <div class="event-title">Can AI Stand-Up?</div>
+          <div class="event-description">AI-generated content is taking over the creative world. But can large-language models replace stand-up comedians? Watch Tommy explore the process of generating stand-up comedy with AI.</div>
+        </div>
+      </div>
 
+      <div class="event-card hidden-up delay-3">
+        <img class="event-image" src="/Slideshow Images/Upload June 2025/CC Talk copy/Picture.png" alt="Event 2" loading="lazy"/>
+        <div class="event-content">
+          <div class="event-title">2035 and the Future of AI</div>
+          <div class="event-description">Everyone says that AI is going to destroy our future, but is that truly the case? Let me guide you through the current state of what AI can do and present a more hopeful future.</div>
+        </div>
+      </div>
 
-
+      <div class="event-card hidden-up delay-1">
+        <img class="event-image" src="/Slideshow Images/Upload June 2025/CodeHarbour - Photos copy/CodeHarbour - AI Presentations Talk - 22nd Feb 2024.00_04_01_12.Still002.png" alt="Event 1" loading="lazy"/>
+        <div class="event-content">
+          <div class="event-title">Let's Change How We Make Presentations</div>
+          <div class="event-description">Making PowerPoint Presentations manually is so 2020. Let's explore how we can use AI to make our presentations for us. My code for combining LLM, Stable Diffusion and Reveal.js will change the way you work.</div>
+        </div>
+      </div>
+      
+      <div class="event-card hidden-up delay-2">
+        <img class="event-image" src="/Events Images/CCTALK - 1.jpg" alt="Event 1" loading="lazy"/>
+        <div class="event-content">
+          <div class="event-title">Stand-Up and Deliver</div>
+          <div class="event-description">An in-depth look into stand-up comedy theory, measuring humour and creativity in computational systems and how to use iterative prompt-chaining to develop stand-up comedy material.</div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 
 <div id="gallery" class="content fade">
-  <h1>Gallery</h1>
+  <section class="content-section">
+    <h1 class="hidden-up" style="color: var(--color-purple-dark); margin-bottom: 2rem;">Gallery</h1>
+    
+    <p class="text-center hidden-up delay-1" style="font-size: 1.2rem; color: #444; margin-bottom: 3rem;">A gallery of events, talks and other photography</p>
 
-  <p class="text-center">
-    A gallery of events, talks and other photography
-  </p>
+    <div class="gallery-container hidden-up delay-2">
+      <div class="main-image">
+        <img id="mainImg" src="/Slideshow%20Images/Events%20Gallery%20Images/BarCamp%20-%20The%20CompSci%20Experiment.png" alt="Main Image">
+      </div>
 
-  <div class="gallery-container">
-    <!-- Main Image -->
-    <div class="main-image">
-      <img id="mainImg" src="/Slideshow%20Images/Events%20Gallery%20Images/BarCamp%20-%20The%20CompSci%20Experiment.png" alt="Main Image">
+      <div class="thumbnail-container">
+        <img class="thumbnail active" src="/Slideshow%20Images/Events%20Gallery%20Images/BarCamp%20-%20The%20CompSci%20Experiment.png" alt="Image 1" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/BarCamp%20-%20Stand-Up%20and%20AI.png" alt="Image 2" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/BarCamp%20-%20Stand-Up%20and%20AI%202.png" alt="Image 3" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/BarCamp%20Stand-Up%20and%20AI%203.png" alt="Image 4" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Ridiculous%20Quirks%200.png" alt="Image 5" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Ridiculous%20Quirks%201.png" alt="Image 6" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Ridiculous%20Quirks%202.png" alt="Image 7" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Can%20AI%20Stand-Up%20UKC.png" alt="Image 8" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Can%20AI%20Stand-Up%20-%20Pint%20of%20Science%20Festival_1.png" alt="Image 9" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Wide%20Shot%20-%20Can%20AI%20Stand-Up%20-%20Pint%20of%20Science%20Festival.png" alt="Image 10" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Pint%20of%20Science%20Festival_2.jpg" alt="Image 11" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Pint%20of%20Science%20Festival_3.jpg" alt="Image 12" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Pint%20of%20Science%20Festival_4.jpg" alt="Image 13" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Pint%20of%20Science%20Festival_5.jpg" alt="Image 14" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Pint%20of%20Science%20Festival_6.jpg" alt="Image 15" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/Stand-Up%20on%20the%20Stour%20-%20Monopoly%20copy/2023-09-28 12.02.52.jpg" alt="Image 16" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/CodeHarbour%20-%20Photos%20copy/CodeHarbour - AI Presentations Talk - 22nd Feb 2024.00_03_41_02.Still001.png" alt="Image 17" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/CodeHarbour%20-%20Photos%20copy/CodeHarbour - AI Presentations Talk - 22nd Feb 2024.00_04_01_12.Still002.png" alt="Image 18" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/CodeHarbour%20-%20Photos%20copy/CodeHarbour - AI Presentations Talk - 22nd Feb 2024.00_13_44_24.Still003.png" alt="Image 19" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/CodeHarbour%20-%20Photos%20copy/CodeHarbour - AI Presentations Talk - 22nd Feb 2024.00_21_59_14.Still004.png" alt="Image 20" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/CC%20Talk%20copy/Picture.png" alt="Image 21" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/Claude AI and Widgets    BarCamp 2024.00_01_14_01.Still001.png" alt="Image 22" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/Claude AI and Widgets    BarCamp 2024.00_05_56_24.Still002.png" alt="Image 23" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/Claude AI and Widgets    BarCamp 2024.00_20_47_07.Still003.png" alt="Image 27" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/Claude AI and Widgets    BarCamp 2024.00_25_18_13.Still004.png" alt="Image 28" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/Can AI Stand Up Thesis Presentation    BarCamp 2024.00_07_23_09.Still001.png" alt="Image 24" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/Can AI Stand Up Thesis Presentation    BarCamp 2024.00_14_46_18.Still002.png" alt="Image 25" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/Can AI Stand Up Thesis Presentation    BarCamp 2024.00_24_42_19.Still003.png" alt="Image 26" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/PowerPoint Karaoke   BarCamp 2024.00_01_28_07.Still001.png" alt="Image 29" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/PowerPoint Karaoke   BarCamp 2024.00_05_28_21.Still002.png" alt="Image 30" onclick="changeImage(this)" loading="lazy">
+        <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/PowerPoint Karaoke   BarCamp 2024.00_09_29_05.Still003.png" alt="Image 31" onclick="changeImage(this)"loading="lazy">
+      </div>
     </div>
-
-    <!-- Thumbnail Images -->
-    <div class="thumbnail-container">
-      <img class="thumbnail active" src="/Slideshow%20Images/Events%20Gallery%20Images/BarCamp%20-%20The%20CompSci%20Experiment.png" alt="Image 1" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/BarCamp%20-%20Stand-Up%20and%20AI.png" alt="Image 2" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/BarCamp%20-%20Stand-Up%20and%20AI%202.png" alt="Image 3" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/BarCamp%20Stand-Up%20and%20AI%203.png" alt="Image 4" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Ridiculous%20Quirks%200.png" alt="Image 5" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Ridiculous%20Quirks%201.png" alt="Image 6" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Ridiculous%20Quirks%202.png" alt="Image 7" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Can%20AI%20Stand-Up%20UKC.png" alt="Image 8" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Can%20AI%20Stand-Up%20-%20Pint%20of%20Science%20Festival_1.png" alt="Image 9" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Wide%20Shot%20-%20Can%20AI%20Stand-Up%20-%20Pint%20of%20Science%20Festival.png" alt="Image 10" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Pint%20of%20Science%20Festival_2.jpg" alt="Image 11" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Pint%20of%20Science%20Festival_3.jpg" alt="Image 12" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Pint%20of%20Science%20Festival_4.jpg" alt="Image 13" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Pint%20of%20Science%20Festival_5.jpg" alt="Image 14" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Events%20Gallery%20Images/Pint%20of%20Science%20Festival_6.jpg" alt="Image 15" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/Stand-Up%20on%20the%20Stour%20-%20Monopoly%20copy/2023-09-28 12.02.52.jpg" alt="Image 16" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/CodeHarbour%20-%20Photos%20copy/CodeHarbour - AI Presentations Talk - 22nd Feb 2024.00_03_41_02.Still001.png" alt="Image 17" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/CodeHarbour%20-%20Photos%20copy/CodeHarbour - AI Presentations Talk - 22nd Feb 2024.00_04_01_12.Still002.png" alt="Image 18" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/CodeHarbour%20-%20Photos%20copy/CodeHarbour - AI Presentations Talk - 22nd Feb 2024.00_13_44_24.Still003.png" alt="Image 19" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/CodeHarbour%20-%20Photos%20copy/CodeHarbour - AI Presentations Talk - 22nd Feb 2024.00_21_59_14.Still004.png" alt="Image 20" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/CC%20Talk%20copy/Picture.png" alt="Image 21" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/Claude AI and Widgets    BarCamp 2024.00_01_14_01.Still001.png" alt="Image 22" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/Claude AI and Widgets    BarCamp 2024.00_05_56_24.Still002.png" alt="Image 23" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/Claude AI and Widgets    BarCamp 2024.00_20_47_07.Still003.png" alt="Image 27" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/Claude AI and Widgets    BarCamp 2024.00_25_18_13.Still004.png" alt="Image 28" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/Can AI Stand Up Thesis Presentation    BarCamp 2024.00_07_23_09.Still001.png" alt="Image 24" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/Can AI Stand Up Thesis Presentation    BarCamp 2024.00_14_46_18.Still002.png" alt="Image 25" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/Can AI Stand Up Thesis Presentation    BarCamp 2024.00_24_42_19.Still003.png" alt="Image 26" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/PowerPoint Karaoke   BarCamp 2024.00_01_28_07.Still001.png" alt="Image 29" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/PowerPoint Karaoke   BarCamp 2024.00_05_28_21.Still002.png" alt="Image 30" onclick="changeImage(this)">
-      <img class="thumbnail" src="/Slideshow%20Images/Upload%20June%202025/BarCamp%202024%20-%20Highlights%20copy/PowerPoint Karaoke   BarCamp 2024.00_09_29_05.Still003.png" alt="Image 31" onclick="changeImage(this)">
-    </div>
-  </div>
+  </section>
 </div>
 
-<div class="footer_wrapper">
+<div class="footer_wrapper tuck-under">
   <div class="footer_container">
     <div class="footer">
-      <p class="footer_title">Find me elsewhere:</p>
-      <div class="footer_buttons">
-        <button
-                class="footer_links"
-                onclick="location.href='mailto:tommy.hills@thetommyverse.com';"
-        >
-          <i class="fa-solid fa-paper-plane"></i>
-          <span class="tab_labels">Email</span>
+      <p class="footer_title hidden-up">Find me elsewhere:</p>
+      <div class="footer_buttons hidden-up delay-1">
+        <button class="footer_links" onclick="location.href='mailto:tommy.hills@thetommyverse.com';">
+          <i class="fa-solid fa-paper-plane"></i> <span class="tab_labels">Email</span>
         </button>
-        <button
-                class="footer_links"
-                onclick="location.href='https://x.com/thetommyverse';"
-        >
-          <i class="fa fa-twitter"></i>
-          <span class="tab_labels">Twitter / X</span>
+        <button class="footer_links" onclick="location.href='https://x.com/thetommyverse';">
+          <i class="fa-brands fa-x-twitter"></i> <span class="tab_labels">Twitter / X</span>
         </button>
-        <button
-                class="footer_links"
-                onclick="location.href='https://www.instagram.com/thetommyverse/';"
-        >
-          <i class="fa fa-instagram"></i>
-          <span class="tab_labels">Instagram</span>
+        <button class="footer_links" onclick="location.href='https://www.instagram.com/thetommyverse/';">
+          <i class="fa-brands fa-instagram"></i> <span class="tab_labels">Instagram</span>
         </button>
-        <button
-                class="footer_links"
-                onclick="location.href='https://www.linkedin.com/in/tommyhills14/';"
-        >
-          <i class="fa fa-linkedin"></i>
-          <span class="tab_labels">LinkedIn</span>
+        <button class="footer_links" onclick="location.href='https://www.linkedin.com/in/tommyhills14/';">
+          <i class="fa-brands fa-linkedin"></i> <span class="tab_labels">LinkedIn</span>
         </button>
-        <button
-                class="footer_links"
-                onclick="location.href='https://bsky.app/profile/thetommyverse.bsky.social';"
-        >
-          <i class="fa-brands fa-bluesky"></i>
-          <span class="tab_labels">BlueSky</span>
-        </button>
-        <button
-                class="footer_links"
-                onclick="location.href='https://github.com/thetommyverse';"
-        >
-          <i class="fa fa-github"></i>
-          <span class="tab_labels">Github</span>
+        <button class="footer_links" onclick="location.href='https://github.com/thetommyverse';">
+          <i class="fa-brands fa-github"></i> <span class="tab_labels">Github</span>
         </button>
       </div>
     </div>
   </div>
 </div>
 
-
 <script>
-  // Function to handle page switching with fade effect
-  function switchPage(target) {
-    // Get all sections (content areas)
-    let sections = document.querySelectorAll('.content');
+  let isHomeVisible = true;
 
-    // Hide all sections and remove the 'active' class
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let width, height, particles;
+  const symbols = ['{ }', 'Σ', 'π', '</>', '∫', 'ƒ(x)', 'λ', '0101', '∞', 'Δ', 'if()'];
+  
+  let mouse = { x: null, y: null };
+  window.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+  });
+  window.addEventListener('mouseout', () => {
+      mouse.x = null;
+      mouse.y = null;
+  });
+
+  function initCanvas() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = document.getElementById('home').offsetHeight || window.innerHeight;
+      particles = [];
+      for (let i = 0; i < 40; i++) {
+          particles.push({
+              x: Math.random() * width,
+              y: Math.random() * height,
+              baseVx: (Math.random() - 0.5) * 0.5,
+              baseVy: (Math.random() * -0.5) - 0.2,
+              vx: 0, vy: 0,
+              size: Math.random() * 20 + 15,
+              symbol: symbols[Math.floor(Math.random() * symbols.length)],
+              alpha: Math.random() * 0.2 + 0.05
+          });
+          particles[i].vx = particles[i].baseVx;
+          particles[i].vy = particles[i].baseVy;
+      }
+  }
+
+  function animateCanvas() {
+    if (isHomeVisible) {
+      ctx.clearRect(0, 0, width, height);
+      
+      particles.forEach(p => {
+          if (mouse.x != null && mouse.y != null) {
+              let dx = p.x - mouse.x;
+              let dy = p.y - mouse.y;
+              let distance = Math.sqrt(dx * dx + dy * dy);
+              
+              if (distance < 120) {
+                  const forceDirectionX = dx / distance;
+                  const forceDirectionY = dy / distance;
+                  const force = (120 - distance) / 120;
+                  p.vx += forceDirectionX * force * 0.5;
+                  p.vy += forceDirectionY * force * 0.5;
+              }
+          }
+
+          p.vx += (p.baseVx - p.vx) * 0.05;
+          p.vy += (p.baseVy - p.vy) * 0.05;
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < -50) p.x = width + 50;
+          if (p.x > width + 50) p.x = -50;
+          if (p.y < -50) p.y = height + 50;
+          if (p.y > height + 50) p.y = -50;
+
+          ctx.font = `800 ${p.size}px Poppins`;
+          ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
+          ctx.fillText(p.symbol, p.x, p.y);
+      });
+    }
+      requestAnimationFrame(animateCanvas);
+  }
+
+  window.addEventListener('resize', initCanvas);
+  document.addEventListener("DOMContentLoaded", () => {
+    const hash = window.location.hash.substring(1) || 'home'; 
+    switchPage(hash);
+    initCanvas();
+    animateCanvas();
+  });
+
+  const observerOptions = { threshold: 0.1 }; 
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+          }
+      });
+  }, observerOptions);
+
+  function resetAndObserve() {
+      const hiddenElements = document.querySelectorAll(
+        '.content.active .hidden-up, .content.active .hidden-left, .content.active .hidden-right, .footer_wrapper .hidden-up, .footer_wrapper .hidden-left, .footer_wrapper .hidden-right'
+      );
+      
+      hiddenElements.forEach((el) => {
+          el.classList.remove('show');
+          observer.observe(el);
+          
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom >= 0) {
+              setTimeout(() => {
+                  el.classList.add('show');
+              }, 100); 
+          }
+      });
+  }
+
+  function switchPage(target) {
+    isHomeVisible = (target === 'home');
+    let sections = document.querySelectorAll('.content');
+    
     sections.forEach(section => {
-      section.classList.remove('active');
-      section.classList.remove('fade');
+      section.classList.remove('active', 'show-tab');
     });
 
-    // Get the target section by matching the id (not data-target)
     let targetSection = document.querySelector(`#${target}`);
-
-    // Show the target section and add the fade class
-    targetSection.classList.add('active');
-    targetSection.classList.add('fade');
-
-    // Update navbar active class
+    if(targetSection) {
+        targetSection.classList.add('active');
+        
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                targetSection.classList.add('show-tab');
+                resetAndObserve(); 
+            });
+        });
+    }
     updateNavbarActive(target);
   }
 
-  // Function to handle redirection with a smooth transition
   function redirectToPage(url) {
-    // Perform a fade-out transition for the current content before redirecting
-    let currentContent = document.querySelector('.fade.show');
-    currentContent.classList.remove('show');
-    currentContent.style.opacity = '0';  // Fade out the content
-
-    // After the fade-out transition, redirect to the target page
+    let currentContent = document.querySelector('.fade.show-tab');
+    if(currentContent) currentContent.classList.remove('show-tab');
+    
     setTimeout(function () {
       window.location.href = url;
-    }, 300); // Wait for the fade-out to complete before redirecting
+    }, 400); 
   }
 
-  // Function to update navbar active class
   function updateNavbarActive(target) {
-    // Get all navbar buttons
     let navButtons = document.querySelectorAll('.nav-btn');
-
-    // Remove the 'active' class from all buttons
-    navButtons.forEach(button => {
-      button.classList.remove('active');
-    });
-
-    // Find the button that corresponds to the target page
+    navButtons.forEach(button => button.classList.remove('active'));
+    
     let activeButton = document.querySelector(`.nav-btn[data-target="${target}"]`);
-
-    // Add the 'active' class to the corresponding navbar button
-    if (activeButton) {
-      activeButton.classList.add('active');
-    }
+    if (activeButton) activeButton.classList.add('active');
   }
 
-  // Adding event listeners to navbar buttons
-  document.querySelectorAll('.nav-btn').forEach(button => {
-    button.addEventListener('click', function(event) {
-      // Prevent default behavior for buttons that use data-target
-      event.preventDefault();
+  function changeImage(thumbnail) {
+      let mainImg = document.getElementById("mainImg");
+      let thumbnails = document.querySelectorAll(".gallery-container .thumbnail");
 
-      // Check if the button has an 'onclick' handler (for Blog and Contact)
-      if (this.hasAttribute('onclick')) {
-        // If it does, execute the redirection logic
-        const url = this.getAttribute('onclick').replace('window.location.href=', '').replace(/['"]/g, '');
-        redirectToPage(url);
-      } else {
-        // If it's a standard nav button, switch the page with the fade effect
-        const target = this.getAttribute('data-target');
-        switchPage(target);
-      }
+      mainImg.src = thumbnail.src;
+
+      thumbnails.forEach(img => img.classList.remove("active"));
+      thumbnail.classList.add("active");
+
+      mainImg.onload = function() {
+          mainImg.style.transition = 'width 0.3s ease-in-out, height 0.3s ease-in-out';
+      };
+  }
+
+  function updateURL(target) {
+    history.pushState({ target: target }, "", "#" + target); 
+    switchPage(target); 
+}
+
+window.addEventListener('popstate', (event) => {
+    const target = event.state ? event.state.target : 'home'; 
+    switchPage(target);
+});
+
+
+  document.addEventListener("DOMContentLoaded", resetAndObserve);
+
+
+    document.querySelectorAll('.essay-toc a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
     });
-  });
 </script>
 
 </body>
