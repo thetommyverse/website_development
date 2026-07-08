@@ -527,13 +527,36 @@
         .button-pair button:first-child { border-right: none; border-bottom: 2px solid rgba(255, 255, 255, 0.2); }
     }
 
-    .thesis-btn {
+    /* Responsive container for thesis buttons */
+.thesis-buttons-container {
+    margin-top: 2rem; 
+    display: flex; 
+    gap: 1rem; 
+    align-items: center; 
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+}
+
+/* Ensure buttons behave nicely when stacked */
+.thesis-btn {
     padding: 10px 20px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 800;
     transition: transform 0.2s, background-color 0.2s;
     display: inline-block;
+    text-align: center; /* Centers text if the button spans full width */
+}
+
+/* Media query to stack buttons on mobile */
+@media (max-width: 600px) {
+    .thesis-buttons-container {
+        flex-direction: column;
+        align-items: stretch; /* Makes buttons full width of the container */
+    }
+    
+    .thesis-buttons-container span {
+        display: none; /* Hides the pipe separator on mobile */
+    }
 }
 
 .thesis-btn-purple {
@@ -710,14 +733,14 @@
         My thesis explores the theoretical and practical frameworks for computational humour. I investigate how iterative prompt-chaining can be leveraged to develop original stand-up comedy material, bridging the gap between human comedic theory and AI generation.
     </p>
     
-    <div style="margin-top: 2rem; display: flex; gap: 1rem; align-items: center; flex-direction: row; white-space: nowrap;">
-    <a class="thesis-btn thesis-btn-purple" href="https://kar.kent.ac.uk/115556/" target="_blank" style="flex-shrink: 0;">
+    <div class="thesis-buttons-container">
+    <a class="thesis-btn thesis-btn-purple" href="https://kar.kent.ac.uk/115556/" target="_blank">
         Read the Thesis via the Kent Academic Repository
     </a>
     
     <span style="color: #999;">|</span>
     
-    <a class="thesis-btn thesis-btn-yellow" href="https://standupanddeliverthesis.notion.site/" target="_blank" style="flex-shrink: 0;">
+    <a class="thesis-btn thesis-btn-yellow" href="https://standupanddeliverthesis.notion.site/" target="_blank">
         Explore the data and results.
     </a>
 </div>
@@ -741,7 +764,7 @@
         <div class="hidden-up delay-2" style="padding: 2rem; border-radius: 20px; background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.4); display: flex; flex-direction: column;">
             <h3 style="color: var(--color-purple-dark); margin-bottom: 0.5rem;">Ambassador Project</h3>
             <p style="color: #444; margin-bottom: 1.5rem; flex-grow: 1;">
-                This data-tracking and modelling project focused on optimizing feedback loops and diagnostic assessment, aligning with ECT Standards and whole-school strategic priorities.
+                This data-tracking and modelling project focused on optimising feedback loops and diagnostic assessment, ensuring that my Ambassador Project aligns with ECT Standards and whole-school strategic priorities.
             </p>
 
             <button class="thesis-btn thesis-btn-yellow" onclick="updateURL('ambassador-project')" style="color: var(--color-black); border: none; cursor: pointer;">
@@ -1011,13 +1034,13 @@ of work was structured around Python Turtle, providing a visually engaging and p
 for programming. Creating geometric shapes (such as rectangles, diamonds and circles) offered a
 clear and predictable program flow. <br> <br>
 
-<em><b>Creating a rectangle</b>
-Draw a line down
-Turn left
-Draw a line across
-Turn left
-Draw a line up
-Turn left
+<em><b>Creating a rectangle</b><br>
+Draw a line down<br>
+Turn left<br>
+Draw a line across <br>
+Turn left <br>
+Draw a line up <br>
+Turn left<br>
 Draw a line across</em>
 <br> <br>
 Pupils could follow the steps in the program by drawing the shape themselves on paper,
@@ -1386,6 +1409,11 @@ in kindergarten.</li> </p>
 
         </div>
 
+
+        <footer>
+    <p>&copy; 2025 Tommy Hills. All rights reserved.</p>
+</footer>
+
         
     </div>
   </section>
@@ -1419,6 +1447,10 @@ in kindergarten.</li> </p>
           align-items: center; 
           gap: 20px; 
           flex-wrap: wrap;">
+
+          <p>
+    This Ambassador Project focused on transforming departmental data practices to improve pupil outcomes while simultaneously reducing teacher workload. By implementing diagnostic assessment and automated feedback systems across Key Stages 3 and 4, the project successfully streamlined administrative processes, returning valuable planning time to educators, and provided teachers with precise, data-driven insights to help students bridge specific learning gaps.
+</p>
           
           <img src="/Academic Images/1.png" style="max-width: 48%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
           <img src="/Academic Images/2.png" style="max-width: 48%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
