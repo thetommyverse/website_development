@@ -1,0 +1,87 @@
+/* ================= Events Grid & Cards ================= */
+.events-title {
+    color: var(--color-purple-dark); 
+    margin-bottom: 4rem;
+}
+
+.events-grid {
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 0 1rem; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 3rem;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.event-card {
+    display: flex;
+    flex-direction: column; 
+    background: var(--glass-bg, rgba(255, 255, 255, 0.65));
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.6));
+    border-top: 8px solid var(--color-purple);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--glass-shadow, rgba(0,0,0,0.05));
+    transition: transform 0.15s ease-out, border-top-color 0.15s ease-out, box-shadow 0.15s ease-out, background 0.15s ease-out;
+    cursor: pointer;
+    text-align: left;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    border-top-color: var(--color-yellow);
+    box-shadow: 0 15px 40px var(--glass-shadow-hover, rgba(107, 33, 168, 0.15));
+    background: var(--glass-bg-hover, rgba(255, 255, 255, 0.85));
+}
+
+.event-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.event-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.event-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--card-text, var(--color-purple));
+    transition: color 0.15s ease-out;
+}
+
+.event-card:hover .event-title {
+    color: var(--color-yellow);
+}
+
+.event-description {
+    font-size: 1.1rem;
+    color: var(--card-text, #444);
+    line-height: 1.6;
+}
+
+.event-padding {
+    padding-bottom: 10px;
+}
+
+.event-btn {
+    margin-top: auto; 
+    border: none; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 8px;
+}

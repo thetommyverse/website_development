@@ -1,0 +1,35 @@
+/* ================= Ambassador Project Specifics ================= */
+.ambassador-section {
+    width: 100%; 
+    display: flex; 
+    justify-content: flex-start;
+}
+
+.ambassador-section .essay-viewer-container {
+    margin-left: 10%;
+    text-align: left;
+}
+
+.ambassador-title {
+    color: var(--color-purple-dark);
+}
+
+.ambassador-container {
+    margin: 2rem 0; 
+    padding: 2rem; 
+    background: rgba(255,255,255,0.3); 
+    border-radius: 12px; 
+    text-align: center; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
+    flex-wrap: wrap;
+}
+
+.ambassador-img {
+    max-width: 48%; 
+    height: auto; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}

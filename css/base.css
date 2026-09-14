@@ -1,0 +1,199 @@
+/* ================= Base Styles & Variables ================= */
+:root {
+    --color-purple: #6b21a8;
+    --color-purple-dark: #4c1d95;
+    --color-purple-light: #9333ea;
+    --color-yellow: #eab308;
+    --color-yellow-light: #fef08a;
+    --color-black: #111111;
+    --color-white: #ffffff;
+    --color-grey-light: #f4f4f5;
+    
+    --font-main: 'Poppins', system-ui, -apple-system, sans-serif;
+    --ease-hover: ease-out; 
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: #f8fafc;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(107, 33, 168, 0.06) 0px, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(234, 179, 8, 0.06) 0px, transparent 40%),
+        radial-gradient(circle at 80% 10%, rgba(107, 33, 168, 0.06) 0px, transparent 40%),
+        radial-gradient(circle at 20% 90%, rgba(234, 179, 8, 0.06) 0px, transparent 40%);
+    background-attachment: fixed;
+    color: var(--color-black);
+    line-height: 1.6;
+    overflow-x: hidden;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* ================= Typography ================= */
+h1, h2, h3 { 
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.1); 
+}
+
+h1 { 
+    font-size: 4rem; 
+    line-height: 1.1; 
+    margin: 0 0 2rem 0; 
+    color: var(--color-purple-dark); 
+    font-weight: 800; 
+    position: relative;
+    z-index: 2;
+}
+
+h2 { 
+    font-size: 2.5rem; 
+    color: var(--color-purple); 
+    margin: 2.5rem 0 1.5rem 0; 
+    font-weight: 800; 
+    display: inline-block; 
+    position: relative; 
+    cursor: default;
+}
+
+h2::after { 
+    content: ''; 
+    position: absolute; 
+    left: 0; 
+    bottom: -5px; 
+    width: 30%; 
+    height: 6px; 
+    background: var(--color-purple); 
+    border-radius: 3px; 
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.2); 
+    transition: width 0.4s cubic-bezier(0.5, 0, 0, 1); 
+}
+
+h2:hover::after { 
+    width: 100%; 
+}
+
+.text-yellow {
+    color: var(--color-yellow) !important;
+}
+
+.inline_link {
+    font-weight: 800;
+    color: var(--color-purple);
+    text-decoration: none;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background-color 0.15s var(--ease-hover), color 0.15s var(--ease-hover);
+}
+
+.inline_link:hover {
+    background-color: var(--color-purple);
+    color: var(--color-white) !important;
+    text-decoration: none;
+}
+
+/* ================= Utility Classes & Layout ================= */
+.content-section {
+    padding: 6rem 10%;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.slant-top-bottom { 
+    clip-path: polygon(0 4rem, 100% 0, 100% calc(100% - 4rem), 0 100%); 
+    margin-top: -4rem; 
+    padding-top: 10rem; 
+    padding-bottom: 10rem; 
+    z-index: 5; 
+}
+
+.tuck-under {
+    margin-top: -4rem;
+    padding-top: 10rem;
+    position: relative;
+    z-index: 2;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ================= Animated Background ================= */
+.bg-animated-purple {
+    background: linear-gradient(-45deg, var(--color-purple-dark), var(--color-purple), #3b0764, var(--color-purple-light));
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    color: var(--color-white);
+    width: 100%;
+    
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-shadow: rgba(0, 0, 0, 0.2);
+    --glass-shadow-hover: rgba(0, 0, 0, 0.4);
+    --glass-bg-hover: rgba(255, 255, 255, 0.1);
+    --card-text: var(--color-white);
+}
+
+.bg-animated-purple h2::after {
+    background: var(--color-yellow);
+}
+
+.bg-animated-purple h1, 
+.bg-animated-purple h2, 
+.bg-animated-purple p { 
+    color: var(--color-white); 
+}
+
+.bg-animated-purple .inline_link {
+    color: var(--color-yellow);
+}
+
+.bg-animated-purple .inline_link:hover {
+    background-color: var(--color-purple-dark);
+    color: var(--color-white) !important;
+}
+
+@keyframes gradientMove { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+
+/* ================= Tab System & Animations ================= */
+.content { 
+    display: none; 
+    width: 100%; 
+}
+.content.active { 
+    display: block; 
+}
+.fade { 
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.4s ease, visibility 0.4s ease; 
+}
+.content.fade.show-tab { 
+    opacity: 1; 
+    visibility: visible; 
+}
+
+.hidden-up { opacity: 0; transform: translateY(60px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+.hidden-left { opacity: 0; transform: translateX(-60px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+.hidden-right { opacity: 0; transform: translateX(60px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+
+.show { opacity: 1; transform: translate(0); }
+
+.delay-1 { transition-delay: 150ms; }
+.delay-2 { transition-delay: 300ms; }
+.delay-3 { transition-delay: 450ms; }
+
+/* ================= Global Responsive ================= */
+@media (max-width: 768px) {
+    h1 { font-size: 3rem; }
+    .slant-top-bottom { clip-path: polygon(0 2rem, 100% 0, 100% calc(100% - 2rem), 0 100%); margin-top: -2rem; padding-top: 6rem; padding-bottom: 6rem; }
+    .tuck-under { margin-top: -2rem; padding-top: 6rem; }
+}

@@ -1,0 +1,183 @@
+/* ================= PGCE Essay Viewer ================= */
+.pgce-section-wrapper {
+    width: 100%; 
+    display: flex; 
+    justify-content: flex-start;
+}
+
+.essay-viewer-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Modifiers for the specific layout alignment requested in HTML */
+.pgce-section-wrapper .essay-viewer-container {
+    margin-left: 10%;
+    text-align: left;
+}
+
+.pgce-section-wrapper h1 {
+    color: var(--color-purple-dark); 
+    text-align: left;
+}
+
+.essay-subtitle {
+    font-size: 1.2rem; 
+    font-style: italic; 
+    color: #444; 
+    margin-bottom: 2rem; 
+    text-align: left;
+}
+
+.essay-toc {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    border-radius: 0 12px 12px 0;
+    list-style: none; 
+    margin-top: 0; 
+    text-align: left;
+}
+
+.essay-toc li { 
+    margin: 8px 0; 
+    font-weight: 600; 
+    text-align: left;
+}
+
+.essay-toc a { 
+    color: var(--color-purple); 
+    text-decoration: none; 
+    transition: 0.2s; 
+    display: block;
+}
+
+.essay-toc a:hover { 
+    color: var(--color-purple-dark); 
+    transform: translateX(5px); 
+    display: inline-block; 
+}
+
+.essay-content-wrapper {
+    color: #444; 
+    line-height: 1.8; 
+    font-size: 1.15rem; 
+    text-align: left;
+}
+
+.source {
+    color: var(--color-purple-dark);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    text-decoration: emphasis;
+}
+
+/* ================= Bibliography ================= */
+.bibliography-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    border: 1px solid #eaeaea;
+}
+
+.bibliography-container h2 {
+    font-size: 1.5rem;
+    color: #111827;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #f3f4f6;
+}
+
+.styled-bibliography {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.source-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.source-item:hover {
+    background-color: #ffffff;
+    border-color: #e5e7eb;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transform: translateY(-2px);
+}
+
+.icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 1.25rem;
+    font-size: 1.25rem;
+}
+
+/* Color coding by source type */
+.type-journal .icon { background-color: #e0f2fe; color: #0284c7; }
+.type-book .icon { background-color: #fef3c7; color: #d97706; }
+.type-web .icon { background-color: #dcfce7; color: #15803d; }
+.type-pdf .icon { background-color: #fee2e2; color: #b91c1c; }
+.type-conference .icon { background-color: #f3e8ff; color: #7e22ce; }
+
+.citation {
+    color: #374151;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.citation em {
+    color: #111827;
+    font-weight: 500;
+}
+
+.citation a {
+    display: inline-block;
+    margin-top: 0.4rem;
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    word-break: break-all;
+    background-color: #eff6ff;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.citation a:hover {
+    background-color: #dbeafe;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .source-item {
+        flex-direction: column;
+    }
+    .icon {
+        margin-bottom: 0.75rem;
+    }
+}

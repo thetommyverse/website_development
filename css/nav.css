@@ -1,0 +1,80 @@
+/* ================= Navigation Bar ================= */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    width: 90%;
+    max-width: 900px;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 10; 
+}
+
+nav button,
+nav a.nav-btn {
+    background-color: var(--color-purple);
+    color: var(--color-white);
+    font-family: var(--font-main);
+    font-weight: 600;
+    border: none;
+    border-radius: 100px; 
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    transition: transform 0.15s var(--ease-hover), background-color 0.15s var(--ease-hover), box-shadow 0.15s var(--ease-hover);
+    text-decoration: none;
+    white-space: nowrap; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+nav button i { 
+    font-size: 1.1rem; 
+}
+
+nav button:hover,
+nav a.nav-btn:hover {
+    background-color: var(--color-purple-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(107, 33, 168, 0.2);
+}
+
+nav button.active,
+nav a.nav-btn.active {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    font-weight: 800;
+    box-shadow: 0 4px 10px rgba(234, 179, 8, 0.3);
+}
+
+.button-pair {
+    display: inline-flex;
+    border-radius: 100px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.button-pair button {
+    border-radius: 0;
+    box-shadow: none; 
+}
+
+.button-pair button:hover {
+    transform: none; 
+    background-color: var(--color-purple-dark);
+}
+
+.button-pair button:first-child { 
+    border-right: 2px solid rgba(255, 255, 255, 0.2); 
+}
+
+@media (max-width: 600px) {
+    nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 400px; }
+    nav button, nav a.nav-btn { width: 100%; justify-content: center; }
+    .button-pair { flex-direction: column; border-radius: 16px; }
+    .button-pair button:first-child { border-right: none; border-bottom: 2px solid rgba(255, 255, 255, 0.2); }
+}

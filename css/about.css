@@ -1,0 +1,65 @@
+/* ================= About Section Containers ================= */
+.about-title {
+    color: var(--color-purple-dark);
+    margin-bottom: 4rem;
+}
+
+.main-text-container {
+    width: 80%; 
+    max-width: 900px;
+    margin: 0 auto; 
+    color: #444; 
+}
+
+.main-text-container p {
+    text-align: left; 
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.outer-img-container { 
+    margin: 3rem auto; 
+    text-align: center; 
+}
+
+.outer-img-container img { 
+    max-width: 100%; 
+    border-radius: 16px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+    display: block; 
+    margin: 0 auto; 
+}
+
+figcaption { 
+    font-size: 0.95rem; 
+    color: #666; 
+    margin-top: 1rem; 
+    font-style: italic; 
+    display: block; 
+}
+
+.bg-animated-purple figcaption { 
+    color: rgba(255,255,255,0.7); 
+}
+
+.about-img-grid {
+    display: flex; 
+    gap: 1rem; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    margin-top: 3rem;
+}
+
+.about-img {
+    width: 30%; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.media-list {
+    text-align: left; 
+    font-size: 1.2rem; 
+    line-height: 2; 
+    margin-bottom: 3rem;
+}
